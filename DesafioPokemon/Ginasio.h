@@ -8,7 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Ginasio : NSObject{
+@interface Ginasio : NSObject
+
+@property (retain, nonatomic) NSString *name;
+@property (retain, nonatomic) NSString *leader;
+
+-(void) setName:(NSString *)name;
+-(void) setLeader:(NSString *)leader;
+
+/*{
     
     NSString *name;
     NSString *leader;
@@ -21,5 +29,6 @@
 #pragma getMethods
 -(NSString *) name;
 -(NSString *) leader;
+*/
 
 @end

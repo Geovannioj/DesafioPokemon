@@ -10,6 +10,29 @@
 
 @implementation Ginasio
 
+@synthesize name = _name;
+@synthesize leader = _leader;
+
+-(void) setName:(NSString *)name{
+    
+    if(name.length > 0 && ![name isEqualToString:@" "]){
+        _name = name;
+    }else{
+        NSLog(@"O nome está inválido!");
+    }
+}
+
+-(void) setLeader:(NSString *)leader{
+    if(leader.length > 0 && ![leader isEqualToString:@" "]){
+        _leader = leader;
+    }else{
+        NSLog(@"O nome do líder está vazio!");
+    }
+}
+@end
+
+
+/*
 #pragma setMethods
 -(void)setName:(NSString *)currentName{
     name = currentName;
@@ -26,4 +49,6 @@
 -(NSString *) leader{
     return leader;
 }
-@end
+ */
+
+
