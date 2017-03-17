@@ -13,22 +13,8 @@
 @property (retain, nonatomic) NSString *name;
 @property (retain, nonatomic) NSString *leader;
 
+-(instancetype) criaGinasio:(NSString *)nome;
 -(void) setName:(NSString *)name;
 -(void) setLeader:(NSString *)leader;
-
-/*{
-    
-    NSString *name;
-    NSString *leader;
-}
-
-#pragma setMethods
--(void) setName: (NSString *) currentName;
--(void) setLeader:(NSString*) currentLeader;
-
-#pragma getMethods
--(NSString *) name;
--(NSString *) leader;
-*/
 
 @end

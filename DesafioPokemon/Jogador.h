@@ -24,5 +24,6 @@
 
 //construtor
 +(instancetype)criarJogador:(NSString*)currentNomeJogador comPokemon:(Pokemon*) currentPokemon;
++(instancetype)criarJogador:(NSString*)nome;
 
 @end

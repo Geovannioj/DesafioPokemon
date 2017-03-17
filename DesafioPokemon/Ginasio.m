@@ -13,6 +13,17 @@
 @synthesize name = _name;
 @synthesize leader = _leader;
 
+-(instancetype) criaGinasioNome: (NSString *)nome{
+    
+    Ginasio *ginasio = [[Ginasio alloc]init];
+    if(ginasio){
+        
+        [ginasio setName: nome];
+    }
+    return ginasio;
+}
+
+
 -(void) setName:(NSString *)name{
     
     if(name.length > 0 && ![name isEqualToString:@" "]){
@@ -30,25 +41,5 @@
     }
 }
 @end
-
-
-/*
-#pragma setMethods
--(void)setName:(NSString *)currentName{
-    name = currentName;
-}
-
--(void)setLeader:(NSString *)currentLeader{
-    leader = currentLeader;
-}
-
--(NSString *) name{
-    return name;
-}
-
--(NSString *) leader{
-    return leader;
-}
- */
 
 
