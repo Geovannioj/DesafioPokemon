@@ -7,11 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Visao.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        // insert code here...
-        NSLog(@"Hello, World!");
+        Jogador *jogador = [Visao criaJogadorInicial];
+        NSLog(@"Nome: %@", jogador.nome);
+        NSLog(@"Aquiii: %@", jogador.pokemons);
     }
     return 0;
 }

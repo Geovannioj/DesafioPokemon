@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6EB5F7401E7C7E9C0000171E /* Visao.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EB5F73F1E7C7E9C0000171E /* Visao.m */; };
 		D42A4E681E79DB0E000C90DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D42A4E671E79DB0E000C90DE /* main.m */; };
 		D42A4E711E79DB59000C90DE /* Pokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = D42A4E701E79DB59000C90DE /* Pokemon.m */; };
 		D42A4E741E79DB6C000C90DE /* Jogador.m in Sources */ = {isa = PBXBuildFile; fileRef = D42A4E731E79DB6C000C90DE /* Jogador.m */; };
@@ -26,6 +27,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6EB5F73E1E7C7E9C0000171E /* Visao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Visao.h; sourceTree = "<group>"; };
+		6EB5F73F1E7C7E9C0000171E /* Visao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Visao.m; sourceTree = "<group>"; };
 		D42A4E641E79DB0E000C90DE /* DesafioPokemon */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DesafioPokemon; sourceTree = BUILT_PRODUCTS_DIR; };
 		D42A4E671E79DB0E000C90DE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D42A4E6F1E79DB59000C90DE /* Pokemon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pokemon.h; sourceTree = "<group>"; };
@@ -97,6 +100,8 @@
 		D4A375F11E7B3140008ACBBC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6EB5F73E1E7C7E9C0000171E /* Visao.h */,
+				6EB5F73F1E7C7E9C0000171E /* Visao.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -159,6 +164,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EB5F7401E7C7E9C0000171E /* Visao.m in Sources */,
 				D42A4E681E79DB0E000C90DE /* main.m in Sources */,
 				D42A4E741E79DB6C000C90DE /* Jogador.m in Sources */,
 				D42A4E771E79DBA0000C90DE /* Ginasio.m in Sources */,

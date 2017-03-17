@@ -8,6 +8,23 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Pokemon : NSObject
+@interface Pokemon : NSObject{
+    NSString * tipo;
+    NSInteger level;
+    NSInteger experiencia;
+    NSString * nome;
+}
+
+// getters
+-(NSInteger)level;
+
+// setters
+-(void)setTipo:(NSString*)currentTipo;
+-(void)setLevel:(NSInteger)currentLevel;
+-(void)setExperiencia:(NSInteger)currentExperiencia;
+-(void)setNome:(NSString*)currentNome;
+
+//Construtor
++(instancetype)criarPokemon:(NSString*)currentNomePokemon noLevel:(NSInteger)currentLevel comExperiencia:(NSInteger)currentExperiencia comTipo:(NSString*)currentTipo;
 
 @end
