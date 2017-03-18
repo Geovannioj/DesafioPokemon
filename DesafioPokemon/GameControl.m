@@ -10,6 +10,7 @@
 #import "Jogador.h"
 #import "Visao.h"
 #import "Pokemon.h"
+#import "Ginasio.h"
 
 @implementation GameControl
 
@@ -62,7 +63,23 @@
     Pokemon *tangela = [Pokemon criarPokemon:@"Tangela" noLevel:9 comExperiencia:1 comTipo:@"Vento"];
     Pokemon *chikorita = [Pokemon criarPokemon:@"Chikorita" noLevel:10 comExperiencia:1 comTipo:@"Vento"];
     
+}
+
++(void)inicializaJogadores{
+    //Criando os jogadores inimigos
+    Jogador *giovanni = [Jogador criarJogador:@"Giovanni"];
+    Jogador *jesse = [Jogador criarJogador:@"Jesse"];
+    Jogador *james = [Jogador criarJogador:@"James"];
+    Jogador *archie = [Jogador criarJogador:@"Archie"];
     
+}
+
++(void)inicializaGinasios{
+    //criando os ginasios
+    Ginasio *pewter = [Ginasio criaGinasio:@"Pewter"];
+    Ginasio *cerulean = [Ginasio criaGinasio:@"Cerulean"];
+    Ginasio *vermilion = [Ginasio criaGinasio:@"Vermilion"];
+    Ginasio *celadon = [Ginasio criaGinasio:@"Celadon"];
 }
 
 @end

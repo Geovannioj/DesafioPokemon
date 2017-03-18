@@ -13,11 +13,20 @@
 @synthesize name = _name;
 @synthesize leader = _leader;
 
--(instancetype) criaGinasioNome: (NSString *)nome{
++(instancetype) criaGinasio:(NSString *)nome comLider:(Jogador*)lider{
+    Ginasio *ginasio = [[Ginasio alloc]init];
+    if(ginasio){
+        [ginasio setName: nome];
+        [ginasio setLeader:lider];
+    }
+    return ginasio;
+
+}
+
++(instancetype) criaGinasio: (NSString *)nome{
     
     Ginasio *ginasio = [[Ginasio alloc]init];
     if(ginasio){
-        
         [ginasio setName: nome];
     }
     return ginasio;
@@ -33,8 +42,8 @@
     }
 }
 
--(void) setLeader:(NSString *)leader{
-    if(leader.length > 0 && ![leader isEqualToString:@" "]){
+-(void) setLeader:(Jogador *)leader{
+    if(leader.nome.length > 0 && ![leader.nome isEqualToString:@" "]){
         _leader = leader;
     }else{
         NSLog(@"O nome do líder está vazio!");

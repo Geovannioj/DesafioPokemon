@@ -26,4 +26,5 @@
 +(instancetype)criarJogador:(NSString*)currentNomeJogador comPokemon:(Pokemon*) currentPokemon;
 +(instancetype)criarJogador:(NSString*)nome;
 
+//outros metodos
 @end

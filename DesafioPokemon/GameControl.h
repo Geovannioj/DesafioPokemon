@@ -8,12 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import "Jogador.h"
+#import "Ginasio.h"
 
 @interface GameControl : NSObject
 -(Jogador *)createPlayerNome: (NSString *)nome;
 
 +(int)escolhaMenu;
-
 +(void)inicializaPokemons;
++(void)inicializaJogadores;
++(void)inicializaGinasios;
 
 @end
