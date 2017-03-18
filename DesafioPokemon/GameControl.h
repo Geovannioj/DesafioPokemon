@@ -10,6 +10,10 @@
 #import "Jogador.h"
 
 @interface GameControl : NSObject
--(Jogador *) createPlayerNome: (NSString *)nome;
+-(Jogador *)createPlayerNome: (NSString *)nome;
+
++(int)escolhaMenu;
+
++(void)inicializaPokemons;
 
 @end

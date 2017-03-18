@@ -16,11 +16,11 @@
     char currentNome[50];
     int pokemonInicial;
     
-    NSLog(@"Digite seu nome: "); scanf("%s", currentNome);
-    NSLog(@"Escolha o seu Pokemon!");
-    NSLog(@"Digite 1 para escolher o Charmander(Elemento: Fogo - Nivel: 1)");
-    NSLog(@"Digite 2 para escolher o Squirtle(Elemento: Agua - Nivel: 1)");
-    NSLog(@"Digite 3 para escolher o Bulbasaur(Elemento: Vento - Nivel: 1)");
+    printf("Digite seu nome: \n"); scanf("%s", currentNome);
+    printf("Escolha o seu Pokemon!\n");
+    printf("Digite 1 para escolher o Charmander(Elemento: Fogo - Nivel: 1)\n");
+    printf("Digite 2 para escolher o Squirtle(Elemento: Agua - Nivel: 1)\n");
+    printf("Digite 3 para escolher o Bulbasaur(Elemento: Vento - Nivel: 1)\n");
     scanf("%d", &pokemonInicial);
     
     Pokemon *pokemon;
@@ -40,6 +40,13 @@
     Jogador *jogador = [Jogador criarJogador:nome comPokemon:pokemon];
     
     return jogador;
+}
+
++(void)menu{
+    printf("Digite 1 para caçar/evoluir pokemons\n");
+    printf("Digite 2 para conquistar ginásios\n");
+    printf("Digite 3 para ver seus status e seus pokemons\n");
+    printf("Digite 4 para Sair\n");
 }
 
 @end

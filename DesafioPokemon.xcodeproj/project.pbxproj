@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E18C6101E7D613900A33D81 /* GameControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E18C60F1E7D613900A33D81 /* GameControl.m */; };
 		6EB5F7401E7C7E9C0000171E /* Visao.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EB5F73F1E7C7E9C0000171E /* Visao.m */; };
 		D42A4E681E79DB0E000C90DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D42A4E671E79DB0E000C90DE /* main.m */; };
 		D42A4E711E79DB59000C90DE /* Pokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = D42A4E701E79DB59000C90DE /* Pokemon.m */; };
@@ -27,6 +28,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6E18C60E1E7D612900A33D81 /* GameControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameControl.h; sourceTree = "<group>"; };
+		6E18C60F1E7D613900A33D81 /* GameControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameControl.m; sourceTree = "<group>"; };
 		6EB5F73E1E7C7E9C0000171E /* Visao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Visao.h; sourceTree = "<group>"; };
 		6EB5F73F1E7C7E9C0000171E /* Visao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Visao.m; sourceTree = "<group>"; };
 		D42A4E641E79DB0E000C90DE /* DesafioPokemon */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DesafioPokemon; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,6 +95,8 @@
 		D4A375F01E7B3132008ACBBC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				6E18C60F1E7D613900A33D81 /* GameControl.m */,
+				6E18C60E1E7D612900A33D81 /* GameControl.h */,
 				D42A4E671E79DB0E000C90DE /* main.m */,
 			);
 			name = Controller;
@@ -169,6 +174,7 @@
 				D42A4E741E79DB6C000C90DE /* Jogador.m in Sources */,
 				D42A4E771E79DBA0000C90DE /* Ginasio.m in Sources */,
 				D42A4E711E79DB59000C90DE /* Pokemon.m in Sources */,
+				6E18C6101E7D613900A33D81 /* GameControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,12 +8,22 @@
 
 #import <Foundation/Foundation.h>
 #import "Visao.h"
+#import "GameControl.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         Jogador *jogador = [Visao criaJogadorInicial];
-        NSLog(@"Nome: %@", jogador.nome);
-        NSLog(@"Aquiii: %@", jogador.pokemons);
+        switch([GameControl escolhaMenu]){
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            default:
+                break;
+                
+        }
+        return 0;
     }
-    return 0;
 }

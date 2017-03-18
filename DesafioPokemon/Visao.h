@@ -12,5 +12,6 @@
 @interface Visao : NSObject
 
 +(Jogador*)criaJogadorInicial;
++(void)menu;
 
 @end
