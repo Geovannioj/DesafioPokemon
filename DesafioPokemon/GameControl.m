@@ -7,10 +7,6 @@
 //
 
 #import "GameControl.h"
-#import "Jogador.h"
-#import "Visao.h"
-#import "Pokemon.h"
-#import "Ginasio.h"
 
 @implementation GameControl
 
@@ -26,7 +22,7 @@
     return opcao;
 }
 
-+(void)inicializaPokemons{
++(void)inicializaJogo{
     //criando 10 pokemons de fogo
     Pokemon *charmeleon = [Pokemon criarPokemon:@"Charmeleon" noLevel:1 comExperiencia:1 comTipo:@"Fogo"];
     Pokemon *charizard = [Pokemon criarPokemon:@"Charizard" noLevel:2 comExperiencia:1 comTipo:@"Fogo"];
@@ -63,23 +59,61 @@
     Pokemon *tangela = [Pokemon criarPokemon:@"Tangela" noLevel:9 comExperiencia:1 comTipo:@"Vento"];
     Pokemon *chikorita = [Pokemon criarPokemon:@"Chikorita" noLevel:10 comExperiencia:1 comTipo:@"Vento"];
     
-}
-
-+(void)inicializaJogadores{
     //Criando os jogadores inimigos
     Jogador *giovanni = [Jogador criarJogador:@"Giovanni"];
     Jogador *jesse = [Jogador criarJogador:@"Jesse"];
     Jogador *james = [Jogador criarJogador:@"James"];
     Jogador *archie = [Jogador criarJogador:@"Archie"];
     
-}
-
-+(void)inicializaGinasios{
     //criando os ginasios
-    Ginasio *pewter = [Ginasio criaGinasio:@"Pewter"];
-    Ginasio *cerulean = [Ginasio criaGinasio:@"Cerulean"];
-    Ginasio *vermilion = [Ginasio criaGinasio:@"Vermilion"];
-    Ginasio *celadon = [Ginasio criaGinasio:@"Celadon"];
+    Ginasio *pewter = [Ginasio criaGinasio:@"Pewter" comLider:jesse];
+    Ginasio *cerulean = [Ginasio criaGinasio:@"Cerulean" comLider:james];
+    Ginasio *vermilion = [Ginasio criaGinasio:@"Vermilion" comLider:archie];
+    Ginasio *celadon = [Ginasio criaGinasio:@"Celadon" comLider:giovanni];
+    
+    //criando os campos
+    Campo *primeiroCampo = [Campo criarCampo:@"Primeiro Campo niveis 1-3"];
+    Campo *segundoCampo = [Campo criarCampo:@"Segundo Campo niveis 4-6"];
+    Campo *terceiroCampo = [Campo criarCampo:@"Primeiro Campo niveis 7-8"];
+    Campo *quartoCampo = [Campo criarCampo:@"Quarto Campo niveis 9-10"];
+    
+    //colocando pokemons no primeiro campo
+    [primeiroCampo setPokemon:charmeleon];
+    [primeiroCampo setPokemon:charizard];
+    [primeiroCampo setPokemon:torchic];
+    [primeiroCampo setPokemon:wartortle];
+    [primeiroCampo setPokemon:blastoise];
+    [primeiroCampo setPokemon:psyduck];
+    [primeiroCampo setPokemon:oddish];
+    [primeiroCampo setPokemon:gloom];
+    [primeiroCampo setPokemon:vileplume];
+    
+    //colocando pokemons no segundo campo
+    [segundoCampo setPokemon:vulpix];
+    [segundoCampo setPokemon:ninetales];
+    [segundoCampo setPokemon:growlithe];
+    [segundoCampo setPokemon:golduck];
+    [segundoCampo setPokemon:poliwag];
+    [segundoCampo setPokemon:poliwhirl];
+    [segundoCampo setPokemon:bellsprout];
+    [segundoCampo setPokemon:weepinbell];
+    [segundoCampo setPokemon:victreebell];
+    
+    //colocando pokemons no terceiro campo
+    [terceiroCampo setPokemon:arcanine];
+    [terceiroCampo setPokemon:ponyta];
+    [terceiroCampo setPokemon:seel];
+    [terceiroCampo setPokemon:shellder];
+    [terceiroCampo setPokemon:exeggcute];
+    [terceiroCampo setPokemon:exeggutor];
+    
+    //colocando pokemons no quarto campo
+    [quartoCampo setPokemon:rapidash];
+    [quartoCampo setPokemon:magmar];
+    [quartoCampo setPokemon:krabby];
+    [quartoCampo setPokemon:kingler];
+    [quartoCampo setPokemon:tangela];
+    [quartoCampo setPokemon:chikorita];
 }
 
 @end

@@ -13,5 +13,6 @@
 
 +(Jogador*)criaJogadorInicial;
 +(void)menu;
++(void)cacarOuEvoluir;
 
 @end
