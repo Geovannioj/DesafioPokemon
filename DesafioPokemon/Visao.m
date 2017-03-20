@@ -49,13 +49,19 @@
     printf("Digite 4 para Sair\n");
 }
 
-+(void)cacarOuEvoluir{
++(void)menuCacarOuEvoluir{
     printf("Escolhar um campo para caçar/evoluir: \n");
     printf("Digite 1 para entrar no Campo 1(niveis:1-3)\n");
     printf("Digite 2 para entrar no Campo 2(niveis:4-6)\n");
     printf("Digite 3 para entrar no Campo 3(niveis:7-8)\n");
-    printf("Digite 4 para entrar no Campo 1(niveis:9-10)\n");
-    printf("Digite 4 para voltar para o menu anterior\n");
+    printf("Digite 4 para entrar no Campo 4(niveis:9-10)\n");
+}
+
++(void)menuCacando{
+    printf("Pokemon %@ encontrado!\n");
+    printf("Digite 1 para lutar\n");
+    printf("Digite 2 para capturar\n");
+    printf("Digite 3 para fugir\n");
 }
 
 @end

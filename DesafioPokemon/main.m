@@ -13,10 +13,11 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         [GameControl inicializaJogo];
+        int opcao;
         Jogador *jogador = [Visao criaJogadorInicial];
         switch([GameControl escolhaMenu]){
             case 1:
-                [Visao cacarOuEvoluir];
+                opcao = [GameControl escolhaCacarOuEvoluir];
                 break;
             case 2:
                 break;

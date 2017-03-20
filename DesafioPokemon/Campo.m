@@ -11,8 +11,8 @@
 @implementation Campo
 
 //setters
--(void)setNome:(NSString*)currentNome{
-    nome = currentNome;
+-(void)setNumero:(int)currentNumero{
+    numero = currentNumero;
 }
 -(void)setPokemon:(Pokemon*)newPokemon{
     pokemons = [[NSMutableArray alloc]init];
@@ -20,8 +20,8 @@
 }
 
 //getters
--(NSString*)nome{
-    return nome;
+-(int)numero{
+    return numero;
 }
 
 -(NSMutableArray*)pokemons{
@@ -29,11 +29,11 @@
 }
 
 //construtor
-+(instancetype)criarCampo:(NSString*)currentNome{
++(instancetype)criarCampo:(int)currentNumero{
     Campo * campo = [[Campo alloc] init];
     
     if(campo){
-        [campo setNome:currentNome];
+        [campo setNumero:currentNumero];
     }
     return campo;
 }

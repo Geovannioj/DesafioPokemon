@@ -10,20 +10,20 @@
 #import "Pokemon.h"
 
 @interface Campo : NSObject{
-    NSString * nome;
+    int numero;
     NSMutableArray * pokemons;
 }
 
 //setters
--(void)setNome:(NSString*)currentNome;
+-(void)setNumero:(int)currentNumero;
 -(void)setPokemon:(Pokemon*)newPokemon;
 
 //getters
--(NSString*)nome;
+-(int)numero;
 -(NSMutableArray*)pokemons;
 
 //construtor
-+(instancetype)criarCampo:(NSString*)currentNome;
++(instancetype)criarCampo:(int)currentNumero;
 
 
 @end

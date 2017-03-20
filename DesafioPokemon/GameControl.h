@@ -17,6 +17,8 @@
 -(Jogador *)createPlayerNome: (NSString *)nome;
 
 +(int)escolhaMenu;
++(int)escolhaCacarOuEvoluir;
 +(void)inicializaJogo;
++(int)escolhaCacar:(int)campo;
 
 @end

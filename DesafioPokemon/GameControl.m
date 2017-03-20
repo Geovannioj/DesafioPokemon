@@ -72,10 +72,10 @@
     Ginasio *celadon = [Ginasio criaGinasio:@"Celadon" comLider:giovanni];
     
     //criando os campos
-    Campo *primeiroCampo = [Campo criarCampo:@"Primeiro Campo niveis 1-3"];
-    Campo *segundoCampo = [Campo criarCampo:@"Segundo Campo niveis 4-6"];
-    Campo *terceiroCampo = [Campo criarCampo:@"Primeiro Campo niveis 7-8"];
-    Campo *quartoCampo = [Campo criarCampo:@"Quarto Campo niveis 9-10"];
+    Campo *primeiroCampo = [Campo criarCampo:1];
+    Campo *segundoCampo = [Campo criarCampo:2];
+    Campo *terceiroCampo = [Campo criarCampo:3];
+    Campo *quartoCampo = [Campo criarCampo:4];
     
     //colocando pokemons no primeiro campo
     [primeiroCampo setPokemon:charmeleon];
@@ -114,6 +114,17 @@
     [quartoCampo setPokemon:kingler];
     [quartoCampo setPokemon:tangela];
     [quartoCampo setPokemon:chikorita];
+}
+
++(int)escolhaCacarOuEvoluir{
+    [Visao menuCacarOuEvoluir];
+    int opcao;
+    scanf("%d", &opcao);
+    return opcao;
+}
+
++(int)escolhaCacar:(int)campo{
+    
 }
 
 @end
