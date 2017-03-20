@@ -58,7 +58,7 @@
 }
 
 +(void)menuCacando{
-    printf("Pokemon %@ encontrado!\n");
+    printf("Pokemon tal encontrado!\n");
     printf("Digite 1 para lutar\n");
     printf("Digite 2 para capturar\n");
     printf("Digite 3 para fugir\n");

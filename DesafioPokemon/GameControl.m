@@ -22,9 +22,13 @@
     return opcao;
 }
 
-+(void)inicializaPokemons{
++(void)inicializaJogo{
     
-    NSMutableArray *itens = [[NSMutableArray alloc]init];
+    //declarando os vetores das classes
+    NSMutableArray *pokemons = [[NSMutableArray alloc]init];
+    NSMutableArray *jogadores = [[NSMutableArray alloc]init];
+    NSMutableArray *ginasios = [[NSMutableArray alloc]init];
+    NSMutableArray *campos = [[NSMutableArray alloc]init];
     
     //criando 10 pokemons de fogo
     Pokemon *charmeleon = [Pokemon criarPokemon:@"Charmeleon" noLevel:1 comExperiencia:1 comTipo:@"Fogo"];
@@ -61,8 +65,6 @@
     Pokemon *exeggutor = [Pokemon criarPokemon:@"Exeggutor" noLevel:8 comExperiencia:1 comTipo:@"Vento"];
     Pokemon *tangela = [Pokemon criarPokemon:@"Tangela" noLevel:9 comExperiencia:1 comTipo:@"Vento"];
     Pokemon *chikorita = [Pokemon criarPokemon:@"Chikorita" noLevel:10 comExperiencia:1 comTipo:@"Vento"];
-    
-    [itens addObject:charmeleon];
     
     //Criando os jogadores inimigos
     Jogador *giovanni = [Jogador criarJogador:@"Giovanni"];
@@ -130,7 +132,7 @@
 }
 
 +(int)escolhaCacar:(int)campo{
-    
+    return 1;
 }
 
 @end
