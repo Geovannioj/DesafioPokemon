@@ -22,7 +22,10 @@
     return opcao;
 }
 
-+(void)inicializaJogo{
++(void)inicializaPokemons{
+    
+    NSMutableArray *itens = [[NSMutableArray alloc]init];
+    
     //criando 10 pokemons de fogo
     Pokemon *charmeleon = [Pokemon criarPokemon:@"Charmeleon" noLevel:1 comExperiencia:1 comTipo:@"Fogo"];
     Pokemon *charizard = [Pokemon criarPokemon:@"Charizard" noLevel:2 comExperiencia:1 comTipo:@"Fogo"];
@@ -58,6 +61,8 @@
     Pokemon *exeggutor = [Pokemon criarPokemon:@"Exeggutor" noLevel:8 comExperiencia:1 comTipo:@"Vento"];
     Pokemon *tangela = [Pokemon criarPokemon:@"Tangela" noLevel:9 comExperiencia:1 comTipo:@"Vento"];
     Pokemon *chikorita = [Pokemon criarPokemon:@"Chikorita" noLevel:10 comExperiencia:1 comTipo:@"Vento"];
+    
+    [itens addObject:charmeleon];
     
     //Criando os jogadores inimigos
     Jogador *giovanni = [Jogador criarJogador:@"Giovanni"];
@@ -114,6 +119,7 @@
     [quartoCampo setPokemon:kingler];
     [quartoCampo setPokemon:tangela];
     [quartoCampo setPokemon:chikorita];
+    
 }
 
 +(int)escolhaCacarOuEvoluir{
