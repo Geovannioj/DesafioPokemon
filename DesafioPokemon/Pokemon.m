@@ -23,7 +23,12 @@
 -(void)setNome:(NSString*)currentNome{
     nome = currentNome;
 }
-
+-(void)addExperiencia{
+    experiencia += 35;
+}
+-(void)addExperienciaDerrota{
+    experiencia += 10;
+}
 //geters
 -(NSInteger)level{
     return level;

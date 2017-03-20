@@ -21,6 +21,12 @@
     scanf("%d", &opcao);
     return opcao;
 }
++(int)escolhaPokemonLutar:(Jogador *)jogador{
+    [Visao menuLutarJogador:jogador];
+    int opcao;
+    scanf("%i",&opcao);
+    return opcao;
+}
 
 +(NSMutableArray*)inicializaJogo{
     
@@ -142,6 +148,47 @@
             break;
     }
     
+}
++(void)escolhaLutar:(Jogador*)jogador:(Pokemon*) pokemonInimigo{
+    
+    [Visao menuLutarJogador:jogador];
+    int indicePokemon = [GameControl escolhaPokemonLutar:jogador];
+    printf("O pokemon %s foi escolhido!",[[jogador.pokemons[indicePokemon] nome] UTF8String]);
+    
+    if([jogador.pokemons[indicePokemon]level] - [pokemonInimigo level] >= 3){
+        
+        [jogador.pokemons[indicePokemon]addExperiencia];
+        printf("Parabéns você venceu a batalha!");
+        printf("seu pokemon ganhou 35 de experiência");
+        
+    }else if([pokemonInimigo level] - [jogador.pokemons[indicePokemon]level] >=3){
+        
+        [jogador.pokemons[indicePokemon]addExperienciaDerrota];
+        
+        printf("Você perdeu");
+        printf("ahhhhh infelizmente não foi dessa vez!");
+        printf("mas você ganhou 10 de exp");
+        
+    }else if([pokemonInimigo level] - [jogador.pokemons[indicePokemon]level] == 0){
+        
+        if(([[jogador.pokemons]tipo] == @"agua") && ([[pokemonInimigo]tipo] == @"fogo")){
+            
+            [jogador.pokemons[indicePokemon]addExperiencia];
+            printf("Parabéns você venceu a batalha!");
+            printf("seu pokemon ganhou 35 de experiência");
+            
+        }else if(([[jogador.pokemons]tipo] == @"fogo") && ([[pokemonInimigo]tipo] == @"vento")){
+            
+            [jogador.pokemons[indicePokemon]addExperiencia];
+            printf("Parabéns você venceu a batalha!");
+            printf("seu pokemon ganhou 35 de experiência");
+            
+        }else if( ([[jogador.pokemons]tipo] == @"fogo") && ([[pokemonInimigo]tipo] == @"vento")){
+            [jogador.pokemons[indicePokemon]addExperiencia];
+            printf("Parabéns você venceu a batalha!");
+            printf("seu pokemon ganhou 35 de experiência");
+        }
+    }
 }
 
 @end

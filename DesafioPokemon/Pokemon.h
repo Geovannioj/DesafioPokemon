@@ -28,4 +28,7 @@
 //Construtor
 +(instancetype)criarPokemon:(NSString*)currentNomePokemon noLevel:(NSInteger)currentLevel comExperiencia:(NSInteger)currentExperiencia comTipo:(NSString*)currentTipo;
 
+-(void)addExperiencia;
+-(void)addExperienciaDerrota;
+
 @end
