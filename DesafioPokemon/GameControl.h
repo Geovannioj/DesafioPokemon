@@ -19,5 +19,6 @@
 +(int)escolhaMenu;
 +(NSMutableArray*)inicializaJogo;
 +(void)escolhaCacar:(NSMutableArray*)itens comJogador:(Jogador*)currentJogador;
++(void)mostrarStatusJogador:(Jogador *)currentJogador;
 
 @end

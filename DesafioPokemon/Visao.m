@@ -69,4 +69,19 @@
     printf("Nao foi dessa vez! Voce nao conseguiu capturar o pokemon\n");
 }
 
++(void)menuStatus:(Jogador *)currentJogador{
+    int pokemonAtual;
+    printf("Nome: %s\n", [currentJogador.nome UTF8String]);
+    printf("Nº de pokémon: %lu\n", (unsigned long)[currentJogador.pokemons count]);
+    
+    for(pokemonAtual=0; pokemonAtual<[currentJogador.pokemons count]; pokemonAtual++){
+        printf("%d -> %s -",pokemonAtual+1, [[currentJogador.pokemons[pokemonAtual] nome] UTF8String]);
+        printf(" Tipo: %s -", [[currentJogador.pokemons[pokemonAtual] tipo] UTF8String]);
+        printf(" Nivel: %lu -",(unsigned long)[currentJogador.pokemons[pokemonAtual] level]);
+        printf(" Exp: %lu\n", (unsigned long)[currentJogador.pokemons[pokemonAtual] experiencia]);
+    }
+    
+    printf("Digite 0 para retornar ao menu\n");
+}
+
 @end

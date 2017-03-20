@@ -21,6 +21,7 @@ int main(int argc, const char * argv[]) {
             case 2:
                 break;
             case 3:
+                [GameControl mostrarStatusJogador:jogador];
                 break;
             default:
                 break;

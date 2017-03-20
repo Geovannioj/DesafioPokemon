@@ -144,4 +144,15 @@
     
 }
 
++(void)mostrarStatusJogador:(Jogador *)currentJogador{
+    int opcao;
+    [Visao menuStatus:currentJogador];
+    scanf("%d", &opcao);
+    switch(opcao){
+        case 0:
+            [GameControl escolhaMenu];
+        break;
+    }
+}
+
 @end

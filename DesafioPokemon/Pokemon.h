@@ -18,6 +18,10 @@
 // getters
 -(NSInteger)level;
 -(NSString*)nome;
+-(NSString*)tipo;
+-(NSInteger) experiencia;
+
+
 
 // setters
 -(void)setTipo:(NSString*)currentTipo;
