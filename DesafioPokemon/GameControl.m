@@ -75,6 +75,20 @@
     Ginasio *vermilion = [Ginasio criaGinasio:@"Vermilion" comLider:archie];
     Ginasio *celadon = [Ginasio criaGinasio:@"Celadon" comLider:giovanni];
     
+    //atribuindo pokemons aos lideres de ginasio
+    [jesse.pokemons addObject:torchic];
+    [jesse.pokemons addObject:psyduck];
+    [jesse.pokemons addObject:vileplume];
+    [james.pokemons addObject:growlithe];
+    [james.pokemons addObject:poliwhirl];
+    [james.pokemons addObject:victreebell];
+    [archie.pokemons addObject:ponyta];
+    [archie.pokemons addObject:shellder];
+    [archie.pokemons addObject:exeggutor];
+    [giovanni.pokemons addObject:chikorita];
+    [giovanni.pokemons addObject:kingler];
+    [giovanni.pokemons addObject:magmar];
+    
     //colocandos os itens no vetor
     [itens addObject:charmeleon];
     [itens addObject:charizard];
@@ -145,6 +159,25 @@
                 [Visao fugiu];
         }
     }while(opcao != 4);
+    
+}
+
++(void)escolharConquistarGinasios:(NSMutableArray*)itens comJogador:(Jogador*)currentJogador{
+    int opcao;
+    do{
+        [Visao menuGinasios:itens];
+        scanf("%d", &opcao);
+        switch (opcao) {
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+        }
+    }while(opcao != 5);
     
 }
 

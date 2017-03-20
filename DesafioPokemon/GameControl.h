@@ -13,10 +13,11 @@
 #import "Ginasio.h"
 
 @interface GameControl : NSObject
--(Jogador *)createPlayerNome: (NSString *)nome;
 
+-(Jogador *)createPlayerNome: (NSString *)nome;
 +(int)escolhaMenu;
 +(NSMutableArray*)inicializaJogo;
 +(void)escolhaCacar:(NSMutableArray*)itens comJogador:(Jogador*)currentJogador;
++(void)escolharConquistarGinasios:(NSMutableArray*)itens comJogador:(Jogador*)currentJogador;
 
 @end

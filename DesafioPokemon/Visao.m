@@ -72,4 +72,12 @@
     printf("Voce fugiu!\n");
 }
 
++(void)menuGinasios:(NSMutableArray*)itens{
+    printf("Digite 1 para Conquistar o Ginasio %s com o lider %s(Nivel 3)\n", [[itens[34] name] UTF8String], [[[itens[34] leader] nome] UTF8String]);
+    printf("Digite 2 para Conquistar o Ginasio %s com o lider %s(Nivel 6)\n", [[itens[35] name] UTF8String], [[[itens[35] leader] nome] UTF8String]);
+    printf("Digite 3 para Conquistar o Ginasio %s com o lider %s(Nivel 8)\n", [[itens[36] name] UTF8String], [[[itens[36] leader] nome] UTF8String]);
+    printf("Digite 4 para Conquistar o Ginasio %s com o lider %s(Nivel 10)\n", [[itens[37] name] UTF8String], [[[itens[37] leader] nome] UTF8String]);
+    printf("Digite 5 para voltar ao menu inicial\n");
+}
+
 @end

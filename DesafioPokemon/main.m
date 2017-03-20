@@ -22,6 +22,7 @@ int main(int argc, const char * argv[]) {
                     [GameControl escolhaCacar:itens comJogador:jogador];
                     break;
                 case 2:
+                    [GameControl escolharConquistarGinasios:itens comJogador:jogador];
                     break;
                 case 3:
                     break;
