@@ -11,7 +11,6 @@
 #import "Visao.h"
 #import "Pokemon.h"
 #import "Ginasio.h"
-#import "Campo.h"
 
 @interface GameControl : NSObject
 -(Jogador *)createPlayerNome: (NSString *)nome;

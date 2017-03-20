@@ -119,28 +119,32 @@
 }
 
 +(void)escolhaCacar:(NSMutableArray*)itens comJogador:(Jogador *)currentJogador{
-    Pokemon *pokemonInimigo = itens[arc4random_uniform(30)];
     int opcao;
-    [Visao menuCacando:pokemonInimigo];
-    scanf("%d", &opcao);
-    switch(opcao){
-        case 1:
-        case 2:
-            if([currentJogador.pokemons count] > 5){
-                [Visao excedeNumeroPokemons];
-            }
-            else{
-                if(arc4random_uniform(1) == 1){
-                    [currentJogador.pokemons addObject:pokemonInimigo];
-                    [Visao capturouPokemon];
+    do{
+        Pokemon *pokemonInimigo = itens[arc4random_uniform(30)];
+        [Visao menuCacando:pokemonInimigo];
+        scanf("%d", &opcao);
+        switch(opcao){
+            case 1:
+                break;
+            case 2:
+                if([currentJogador.pokemons count] >= 5){
+                    [Visao excedeNumeroPokemons];
                 }
                 else{
-                    [Visao naoCapturouPokemon];
+                    if(arc4random_uniform(2) == 1){
+                        [currentJogador.pokemons addObject:pokemonInimigo];
+                        [Visao capturouPokemon];
+                    }
+                    else{
+                        [Visao naoCapturouPokemon];
+                    }
                 }
-            }
-        case 3:
-            break;
-    }
+                break;
+            case 3:
+                [Visao fugiu];
+        }
+    }while(opcao != 4);
     
 }
 

@@ -14,18 +14,19 @@ int main(int argc, const char * argv[]) {
     @autoreleasepool {
         NSMutableArray *itens = [GameControl inicializaJogo];
         Jogador *jogador = [Visao criaJogadorInicial];
-        switch([GameControl escolhaMenu]){
-            case 1:
-                [GameControl escolhaCacar:itens comJogador:jogador];
-                break;
-            case 2:
-                break;
-            case 3:
-                break;
-            default:
-                break;
-                
-        }
+        int opcao;
+        do{
+            opcao = [GameControl escolhaMenu];
+            switch(opcao){
+                case 1:
+                    [GameControl escolhaCacar:itens comJogador:jogador];
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+            }
+        }while(opcao != 4);
         return 0;
     }
 }

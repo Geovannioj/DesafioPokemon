@@ -18,5 +18,6 @@
 +(void)excedeNumeroPokemons;
 +(void)capturouPokemon;
 +(void)naoCapturouPokemon;
++(void)fugiu;
 
 @end

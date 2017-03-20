@@ -9,7 +9,6 @@
 #import "Visao.h"
 #import "Jogador.h"
 #import "Pokemon.h"
-#import "Campo.h"
 
 @implementation Visao
 
@@ -67,6 +66,10 @@
 }
 +(void)naoCapturouPokemon{
     printf("Nao foi dessa vez! Voce nao conseguiu capturar o pokemon\n");
+}
+
++(void)fugiu{
+    printf("Voce fugiu!\n");
 }
 
 @end
