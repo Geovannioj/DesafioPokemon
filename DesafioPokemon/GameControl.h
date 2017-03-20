@@ -11,14 +11,14 @@
 #import "Visao.h"
 #import "Pokemon.h"
 #import "Ginasio.h"
-#import "Campo.h"
 
 @interface GameControl : NSObject
--(Jogador *)createPlayerNome: (NSString *)nome;
 
+-(Jogador *)createPlayerNome: (NSString *)nome;
 +(int)escolhaMenu;
 +(NSMutableArray*)inicializaJogo;
 +(void)escolhaCacar:(NSMutableArray*)itens comJogador:(Jogador*)currentJogador;
 +(void)mostrarStatusJogador:(Jogador *)currentJogador;
++(void)escolherConquistarGinasios:(NSMutableArray*)itens comJogador:(Jogador*)currentJogador;
 
 @end

@@ -9,7 +9,6 @@
 #import "Visao.h"
 #import "Jogador.h"
 #import "Pokemon.h"
-#import "Campo.h"
 
 @implementation Visao
 
@@ -80,8 +79,18 @@
         printf(" Nivel: %lu -",(unsigned long)[currentJogador.pokemons[pokemonAtual] level]);
         printf(" Exp: %lu\n", (unsigned long)[currentJogador.pokemons[pokemonAtual] experiencia]);
     }
-    
-    printf("Digite 0 para retornar ao menu\n");
+}
+
++(void)fugiu{
+    printf("Voce fugiu!\n");
+}
+
++(void)menuGinasios:(NSMutableArray*)itens{
+    printf("Digite 1 para Conquistar o Ginasio %s com o lider %s(Nivel 3)\n", [[itens[34] name] UTF8String], [[[itens[34] leader] nome] UTF8String]);
+    printf("Digite 2 para Conquistar o Ginasio %s com o lider %s(Nivel 6)\n", [[itens[35] name] UTF8String], [[[itens[35] leader] nome] UTF8String]);
+    printf("Digite 3 para Conquistar o Ginasio %s com o lider %s(Nivel 8)\n", [[itens[36] name] UTF8String], [[[itens[36] leader] nome] UTF8String]);
+    printf("Digite 4 para Conquistar o Ginasio %s com o lider %s(Nivel 10)\n", [[itens[37] name] UTF8String], [[[itens[37] leader] nome] UTF8String]);
+    printf("Digite 5 para voltar ao menu inicial\n");
 }
 
 @end

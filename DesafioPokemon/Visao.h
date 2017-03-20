@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "Jogador.h"
 #import "Pokemon.h"
+#import "Ginasio.h"
 
 @interface Visao : NSObject
 
@@ -19,5 +20,7 @@
 +(void)capturouPokemon;
 +(void)naoCapturouPokemon;
 +(void)menuStatus:(Jogador *)currentJogador;
++(void)fugiu;
++(void)menuGinasios:(NSMutableArray*)itens;
 
 @end
