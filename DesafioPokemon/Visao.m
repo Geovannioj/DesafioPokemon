@@ -9,6 +9,7 @@
 #import "Visao.h"
 #import "Jogador.h"
 #import "Pokemon.h"
+#import "Campo.h"
 
 @implementation Visao
 
@@ -49,19 +50,23 @@
     printf("Digite 4 para Sair\n");
 }
 
-+(void)menuCacarOuEvoluir{
-    printf("Escolhar um campo para caçar/evoluir: \n");
-    printf("Digite 1 para entrar no Campo 1(niveis:1-3)\n");
-    printf("Digite 2 para entrar no Campo 2(niveis:4-6)\n");
-    printf("Digite 3 para entrar no Campo 3(niveis:7-8)\n");
-    printf("Digite 4 para entrar no Campo 4(niveis:9-10)\n");
-}
-
-+(void)menuCacando{
-    printf("Pokemon tal encontrado!\n");
++(void)menuCacando:(Pokemon*)pokemonInimigo{
+    printf("Voce encontrou o pokemon %s! de level %ld\n", [pokemonInimigo.nome UTF8String], (long)pokemonInimigo.level);
     printf("Digite 1 para lutar\n");
     printf("Digite 2 para capturar\n");
     printf("Digite 3 para fugir\n");
+    printf("Digite 4 para voltar ao menu inicial\n");
+}
+
++(void)excedeNumeroPokemons{
+    printf("Voce ja possui 5 pokemons! Voce nao pode mais capturar pokemons!\n");
+}
+
++(void)capturouPokemon{
+    printf("Parabéns! Voce conseguiu capturar o pokemon!\n");
+}
++(void)naoCapturouPokemon{
+    printf("Nao foi dessa vez! Voce nao conseguiu capturar o pokemon\n");
 }
 
 @end

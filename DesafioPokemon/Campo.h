@@ -21,6 +21,7 @@
 //getters
 -(int)numero;
 -(NSMutableArray*)pokemons;
+-(Pokemon*)getPokemonEspecifico:(int)indice;
 
 //construtor
 +(instancetype)criarCampo:(int)currentNumero;

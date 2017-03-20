@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		6E18C6101E7D613900A33D81 /* GameControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E18C60F1E7D613900A33D81 /* GameControl.m */; };
-		6E18C6131E7D757200A33D81 /* Campo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E18C6121E7D757200A33D81 /* Campo.m */; };
 		6EB5F7401E7C7E9C0000171E /* Visao.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EB5F73F1E7C7E9C0000171E /* Visao.m */; };
 		D42A4E681E79DB0E000C90DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D42A4E671E79DB0E000C90DE /* main.m */; };
 		D42A4E711E79DB59000C90DE /* Pokemon.m in Sources */ = {isa = PBXBuildFile; fileRef = D42A4E701E79DB59000C90DE /* Pokemon.m */; };
@@ -31,8 +30,6 @@
 /* Begin PBXFileReference section */
 		6E18C60E1E7D612900A33D81 /* GameControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameControl.h; sourceTree = "<group>"; };
 		6E18C60F1E7D613900A33D81 /* GameControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameControl.m; sourceTree = "<group>"; };
-		6E18C6111E7D757200A33D81 /* Campo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Campo.h; sourceTree = "<group>"; };
-		6E18C6121E7D757200A33D81 /* Campo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Campo.m; sourceTree = "<group>"; };
 		6EB5F73E1E7C7E9C0000171E /* Visao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Visao.h; sourceTree = "<group>"; };
 		6EB5F73F1E7C7E9C0000171E /* Visao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Visao.m; sourceTree = "<group>"; };
 		D42A4E641E79DB0E000C90DE /* DesafioPokemon */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DesafioPokemon; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,8 +88,6 @@
 				D42A4E731E79DB6C000C90DE /* Jogador.m */,
 				D42A4E751E79DBA0000C90DE /* Ginasio.h */,
 				D42A4E761E79DBA0000C90DE /* Ginasio.m */,
-				6E18C6111E7D757200A33D81 /* Campo.h */,
-				6E18C6121E7D757200A33D81 /* Campo.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -177,7 +172,6 @@
 				6EB5F7401E7C7E9C0000171E /* Visao.m in Sources */,
 				D42A4E681E79DB0E000C90DE /* main.m in Sources */,
 				D42A4E741E79DB6C000C90DE /* Jogador.m in Sources */,
-				6E18C6131E7D757200A33D81 /* Campo.m in Sources */,
 				D42A4E771E79DBA0000C90DE /* Ginasio.m in Sources */,
 				D42A4E711E79DB59000C90DE /* Pokemon.m in Sources */,
 				6E18C6101E7D613900A33D81 /* GameControl.m in Sources */,

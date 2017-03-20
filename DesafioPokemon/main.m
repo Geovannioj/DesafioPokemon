@@ -12,12 +12,11 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        [GameControl inicializaJogo];
-        int opcao;
+        NSMutableArray *itens = [GameControl inicializaJogo];
         Jogador *jogador = [Visao criaJogadorInicial];
         switch([GameControl escolhaMenu]){
             case 1:
-                opcao = [GameControl escolhaCacarOuEvoluir];
+                [GameControl escolhaCacar:itens comJogador:jogador];
                 break;
             case 2:
                 break;

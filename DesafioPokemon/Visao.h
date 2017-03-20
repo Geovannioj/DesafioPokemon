@@ -8,12 +8,15 @@
 
 #import <Foundation/Foundation.h>
 #import "Jogador.h"
+#import "Pokemon.h"
 
 @interface Visao : NSObject
 
 +(Jogador*)criaJogadorInicial;
 +(void)menu;
-+(void)menuCacarOuEvoluir;
-+(void)menuCacando;
++(void)menuCacando:(Pokemon*)pokemonInimigo;
++(void)excedeNumeroPokemons;
++(void)capturouPokemon;
++(void)naoCapturouPokemon;
 
 @end

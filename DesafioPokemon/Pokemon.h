@@ -17,6 +17,7 @@
 
 // getters
 -(NSInteger)level;
+-(NSString*)nome;
 
 // setters
 -(void)setTipo:(NSString*)currentTipo;

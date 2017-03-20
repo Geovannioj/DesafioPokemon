@@ -29,6 +29,10 @@
     return level;
 }
 
+-(NSString*)nome{
+    return nome;
+}
+
 //construtor
 +(instancetype)criarPokemon:(NSString*)currentNomePokemon noLevel:(NSInteger)currentLevel comExperiencia:(NSInteger)currentExperiencia comTipo:(NSString*)currentTipo{
     

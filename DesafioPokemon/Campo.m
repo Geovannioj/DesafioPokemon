@@ -28,6 +28,10 @@
     return pokemons;
 }
 
+-(Pokemon*)getPokemonEspecifico:(int)indice{
+    return pokemons[indice];
+}
+
 //construtor
 +(instancetype)criarCampo:(int)currentNumero{
     Campo * campo = [[Campo alloc] init];

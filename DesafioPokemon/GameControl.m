@@ -22,13 +22,10 @@
     return opcao;
 }
 
-+(void)inicializaJogo{
++(NSMutableArray*)inicializaJogo{
     
-    //declarando os vetores das classes
-    NSMutableArray *pokemons = [[NSMutableArray alloc]init];
-    NSMutableArray *jogadores = [[NSMutableArray alloc]init];
-    NSMutableArray *ginasios = [[NSMutableArray alloc]init];
-    NSMutableArray *campos = [[NSMutableArray alloc]init];
+    //declarando o vetor de itens
+    NSMutableArray *itens = [[NSMutableArray alloc]init];
     
     //criando 10 pokemons de fogo
     Pokemon *charmeleon = [Pokemon criarPokemon:@"Charmeleon" noLevel:1 comExperiencia:1 comTipo:@"Fogo"];
@@ -78,61 +75,73 @@
     Ginasio *vermilion = [Ginasio criaGinasio:@"Vermilion" comLider:archie];
     Ginasio *celadon = [Ginasio criaGinasio:@"Celadon" comLider:giovanni];
     
-    //criando os campos
-    Campo *primeiroCampo = [Campo criarCampo:1];
-    Campo *segundoCampo = [Campo criarCampo:2];
-    Campo *terceiroCampo = [Campo criarCampo:3];
-    Campo *quartoCampo = [Campo criarCampo:4];
+    //colocandos os itens no vetor
+    [itens addObject:charmeleon];
+    [itens addObject:charizard];
+    [itens addObject:torchic];
+    [itens addObject:vulpix];
+    [itens addObject:ninetales];
+    [itens addObject:growlithe];
+    [itens addObject:arcanine];
+    [itens addObject:ponyta];
+    [itens addObject:rapidash];
+    [itens addObject:magmar];
+    [itens addObject:wartortle];
+    [itens addObject:blastoise];
+    [itens addObject:psyduck];
+    [itens addObject:golduck];
+    [itens addObject:poliwag];
+    [itens addObject:poliwhirl];
+    [itens addObject:seel];
+    [itens addObject:shellder];
+    [itens addObject:krabby];
+    [itens addObject:kingler];
+    [itens addObject:oddish];
+    [itens addObject:gloom];
+    [itens addObject:vileplume];
+    [itens addObject:bellsprout];
+    [itens addObject:weepinbell];
+    [itens addObject:victreebell];
+    [itens addObject:exeggcute];
+    [itens addObject:exeggutor];
+    [itens addObject:tangela];
+    [itens addObject:chikorita];
+    [itens addObject:giovanni];
+    [itens addObject:jesse];
+    [itens addObject:james];
+    [itens addObject:archie];
+    [itens addObject:pewter];
+    [itens addObject:cerulean];
+    [itens addObject:vermilion];
+    [itens addObject:celadon];
     
-    //colocando pokemons no primeiro campo
-    [primeiroCampo setPokemon:charmeleon];
-    [primeiroCampo setPokemon:charizard];
-    [primeiroCampo setPokemon:torchic];
-    [primeiroCampo setPokemon:wartortle];
-    [primeiroCampo setPokemon:blastoise];
-    [primeiroCampo setPokemon:psyduck];
-    [primeiroCampo setPokemon:oddish];
-    [primeiroCampo setPokemon:gloom];
-    [primeiroCampo setPokemon:vileplume];
-    
-    //colocando pokemons no segundo campo
-    [segundoCampo setPokemon:vulpix];
-    [segundoCampo setPokemon:ninetales];
-    [segundoCampo setPokemon:growlithe];
-    [segundoCampo setPokemon:golduck];
-    [segundoCampo setPokemon:poliwag];
-    [segundoCampo setPokemon:poliwhirl];
-    [segundoCampo setPokemon:bellsprout];
-    [segundoCampo setPokemon:weepinbell];
-    [segundoCampo setPokemon:victreebell];
-    
-    //colocando pokemons no terceiro campo
-    [terceiroCampo setPokemon:arcanine];
-    [terceiroCampo setPokemon:ponyta];
-    [terceiroCampo setPokemon:seel];
-    [terceiroCampo setPokemon:shellder];
-    [terceiroCampo setPokemon:exeggcute];
-    [terceiroCampo setPokemon:exeggutor];
-    
-    //colocando pokemons no quarto campo
-    [quartoCampo setPokemon:rapidash];
-    [quartoCampo setPokemon:magmar];
-    [quartoCampo setPokemon:krabby];
-    [quartoCampo setPokemon:kingler];
-    [quartoCampo setPokemon:tangela];
-    [quartoCampo setPokemon:chikorita];
-    
+    return itens;
 }
 
-+(int)escolhaCacarOuEvoluir{
-    [Visao menuCacarOuEvoluir];
++(void)escolhaCacar:(NSMutableArray*)itens comJogador:(Jogador *)currentJogador{
+    Pokemon *pokemonInimigo = itens[arc4random_uniform(30)];
     int opcao;
+    [Visao menuCacando:pokemonInimigo];
     scanf("%d", &opcao);
-    return opcao;
-}
-
-+(int)escolhaCacar:(int)campo{
-    return 1;
+    switch(opcao){
+        case 1:
+        case 2:
+            if([currentJogador.pokemons count] > 5){
+                [Visao excedeNumeroPokemons];
+            }
+            else{
+                if(arc4random_uniform(1) == 1){
+                    [currentJogador.pokemons addObject:pokemonInimigo];
+                    [Visao capturouPokemon];
+                }
+                else{
+                    [Visao naoCapturouPokemon];
+                }
+            }
+        case 3:
+            break;
+    }
+    
 }
 
 @end
