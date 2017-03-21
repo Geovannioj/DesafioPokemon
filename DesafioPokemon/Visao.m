@@ -7,8 +7,6 @@
 //
 
 #import "Visao.h"
-#import "Jogador.h"
-#import "Pokemon.h"
 
 @implementation Visao
 
@@ -17,6 +15,7 @@
     int pokemonInicial;
     
     printf("Digite seu nome: \n"); scanf("%s", currentNome);
+    
     printf("Escolha o seu Pokemon!\n");
     printf("Digite 1 para escolher o Charmander(Elemento: Fogo - Nivel: 1)\n");
     printf("Digite 2 para escolher o Squirtle(Elemento: Agua - Nivel: 1)\n");
@@ -38,6 +37,7 @@
     NSString *nome = [NSString stringWithUTF8String:currentNome];
     
     Jogador *jogador = [Jogador criarJogador:nome comPokemon:pokemon];
+
     
     return jogador;
 }
