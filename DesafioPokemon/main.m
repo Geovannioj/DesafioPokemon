@@ -21,6 +21,7 @@ int main(int argc, const char * argv[]) {
             switch(opcao){
                 case 1:
                     [GameControl escolhaCacar:itens comJogador:jogador];
+                    
                     break;
                 case 2:
                     [GameControl escolherConquistarGinasios:itens comJogador:jogador];

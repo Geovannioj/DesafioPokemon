@@ -150,6 +150,7 @@
         switch(opcao){
             case 1:
                 validado=YES;
+                    [GameControl escolhaLutar:currentJogador contraPokemon:pokemonInimigo];
                 break;
             case 2:
                 if([currentJogador.pokemons count] >= 5){
