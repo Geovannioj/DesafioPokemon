@@ -19,7 +19,7 @@
 +(int)escolhaPokemonLutar:(Jogador *) jogador;
 +(NSMutableArray*)inicializaJogo;
 +(void)escolhaCacar:(NSMutableArray*)itens comJogador:(Jogador*)currentJogador;
-+(void)escolhaLutar:(Jogador*) jogador: (Pokemon*) pokemonInimigo;
++(void)escolhaLutar:(Jogador*)jogador contraPokemon:(Pokemon*) pokemonInimigo;
 +(void)mostrarStatusJogador:(Jogador *)currentJogador;
 +(void)escolherConquistarGinasios:(NSMutableArray*)itens comJogador:(Jogador*)currentJogador;
 +(void)conquistar:(NSMutableArray*)itens ginasio:(int)opcao comJogador:(Jogador*)currentJogador;

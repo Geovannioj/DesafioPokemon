@@ -191,7 +191,7 @@
     [Visao menuStatus:currentJogador];
     
 }
-+(void)escolhaLutar:(Jogador*)jogador:(Pokemon*) pokemonInimigo{
++(void)escolhaLutar:(Jogador*)jogador contraPokemon:(Pokemon*) pokemonInimigo{
     
     [Visao menuLutarJogador:jogador];
     int indicePokemon = [GameControl escolhaPokemonLutar:jogador];
@@ -213,19 +213,19 @@
         
     }else if([pokemonInimigo level] - [jogador.pokemons[indicePokemon]level] == 0){
         
-        if(([[jogador.pokemons]tipo] == @"agua") && ([[pokemonInimigo]tipo] == @"fogo")){
+        if([[jogador.pokemons[indicePokemon] tipo] isEqualToString:@"Agua"] && [[pokemonInimigo tipo] isEqualToString:@"Fogo"]){
             
             [jogador.pokemons[indicePokemon]addExperiencia];
             printf("Parabéns você venceu a batalha!");
             printf("seu pokemon ganhou 35 de experiência");
             
-        }else if(([[jogador.pokemons]tipo] == @"fogo") && ([[pokemonInimigo]tipo] == @"vento")){
+        }else if([[jogador.pokemons[indicePokemon] tipo] isEqualToString:@"Fogo"] && [[pokemonInimigo tipo] isEqualToString:@"Vento"]){
             
             [jogador.pokemons[indicePokemon]addExperiencia];
             printf("Parabéns você venceu a batalha!");
             printf("seu pokemon ganhou 35 de experiência");
             
-        }else if( ([[jogador.pokemons]tipo] == @"fogo") && ([[pokemonInimigo]tipo] == @"vento")){
+        }else if([[jogador.pokemons[indicePokemon] tipo] isEqualToString:@"Vento"] && [[pokemonInimigo tipo] isEqualToString:@"Agua"]){
             [jogador.pokemons[indicePokemon]addExperiencia];
             printf("Parabéns você venceu a batalha!");
             printf("seu pokemon ganhou 35 de experiência");

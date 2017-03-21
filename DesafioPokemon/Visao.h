@@ -19,12 +19,9 @@
 +(void)excedeNumeroPokemons;
 +(void)capturouPokemon;
 +(void)naoCapturouPokemon;
-<<<<<<< HEAD
 +(void)menuLutarJogador:(Jogador*)Jogador;
-=======
 +(void)menuStatus:(Jogador *)currentJogador;
 +(void)fugiu;
 +(void)menuGinasios:(NSMutableArray*)itens;
->>>>>>> fc6391585aea5aa68916c4cb086ebb2452f33ed4
 
 @end
