@@ -140,12 +140,16 @@
 
 +(void)escolhaCacar:(NSMutableArray*)itens comJogador:(Jogador *)currentJogador{
     int opcao;
+    bool validado=NO;
+    
+    Pokemon *pokemonInimigo = itens[arc4random_uniform(30)];
+    [Visao menuCacando:pokemonInimigo];
+
     do{
-        Pokemon *pokemonInimigo = itens[arc4random_uniform(30)];
-        [Visao menuCacando:pokemonInimigo];
         scanf("%d", &opcao);
         switch(opcao){
             case 1:
+                validado=YES;
                 break;
             case 2:
                 if([currentJogador.pokemons count] >= 5){
@@ -160,11 +164,16 @@
                         [Visao naoCapturouPokemon];
                     }
                 }
+                validado=YES;
                 break;
             case 3:
                 [Visao fugiu];
+                validado=YES;
+                break;
+            default:
+                printf("Insira uma opção válida: \n");
         }
-    }while(opcao != 4);
+    }while(!validado);
     
 }
 

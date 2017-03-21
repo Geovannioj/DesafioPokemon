@@ -20,20 +20,34 @@
     printf("Digite 1 para escolher o Charmander(Elemento: Fogo - Nivel: 1)\n");
     printf("Digite 2 para escolher o Squirtle(Elemento: Agua - Nivel: 1)\n");
     printf("Digite 3 para escolher o Bulbasaur(Elemento: Vento - Nivel: 1)\n");
-    scanf("%d", &pokemonInicial);
-    
+
+    bool validado=NO;
     Pokemon *pokemon;
-    switch (pokemonInicial) {
-        case 1:
-            //constor do jogador
-            pokemon = [Pokemon criarPokemon:@"Charmander"noLevel:1 comExperiencia:0 comTipo:@"Fogo"];
-            break;
-        case 2:
-            pokemon = [Pokemon criarPokemon:@"Squirtle" noLevel:1 comExperiencia:0 comTipo:@"Agua"];
-            break;
-        default:
-            pokemon = [Pokemon criarPokemon:@"Bulbasaur" noLevel:1 comExperiencia:0 comTipo:@"Vento"];
-    }
+    
+    do {
+    
+        
+        scanf("%d", &pokemonInicial);
+        
+        switch (pokemonInicial) {
+            case 1:
+                //constor do jogador
+                pokemon = [Pokemon criarPokemon:@"Charmander"noLevel:1 comExperiencia:0 comTipo:@"Fogo"];
+                validado=YES;
+                break;
+            case 2:
+                pokemon = [Pokemon criarPokemon:@"Squirtle" noLevel:1 comExperiencia:0 comTipo:@"Agua"];
+                validado=YES;
+                break;
+            case 3:
+                pokemon = [Pokemon criarPokemon:@"Bulbasaur" noLevel:1 comExperiencia:0 comTipo:@"Vento"];
+                validado=YES;
+                break;
+            default:
+                printf("Insira uma opção válida: \n");
+        }
+    } while(!validado);
+    
     NSString *nome = [NSString stringWithUTF8String:currentNome];
     
     Jogador *jogador = [Jogador criarJogador:nome comPokemon:pokemon];
@@ -54,7 +68,6 @@
     printf("Digite 1 para lutar\n");
     printf("Digite 2 para capturar\n");
     printf("Digite 3 para fugir\n");
-    printf("Digite 4 para voltar ao menu inicial\n");
 }
 
 +(void)excedeNumeroPokemons{
@@ -68,7 +81,7 @@
     printf("Nao foi dessa vez! Voce nao conseguiu capturar o pokemon\n");
 }
 
-+(void)menuLutar:(Jogador*)Jogador{
++(void)menuLutarJogador:(Jogador*)Jogador{
     printf("Escolha o pokemon para batalhar");
     printf("%@",Jogador.pokemons);
     printf("Digite o número do pokemon que você deseja lutar: ");
@@ -80,9 +93,9 @@
     printf("Nº de pokémon: %lu\n", (unsigned long)[currentJogador.pokemons count]);
     
     for(pokemonAtual=0; pokemonAtual<[currentJogador.pokemons count]; pokemonAtual++){
-        printf("%d -> %s -",pokemonAtual+1, [[currentJogador.pokemons[pokemonAtual] nome] UTF8String]);
-        printf(" Tipo: %s -", [[currentJogador.pokemons[pokemonAtual] tipo] UTF8String]);
-        printf(" Nivel: %lu -",(unsigned long)[currentJogador.pokemons[pokemonAtual] level]);
+        printf("%d || %s ||",pokemonAtual+1, [[currentJogador.pokemons[pokemonAtual] nome] UTF8String]);
+        printf(" Tipo: %s ||", [[currentJogador.pokemons[pokemonAtual] tipo] UTF8String]);
+        printf(" Nivel: %lu ||",(unsigned long)[currentJogador.pokemons[pokemonAtual] level]);
         printf(" Exp: %lu\n", (unsigned long)[currentJogador.pokemons[pokemonAtual] experiencia]);
     }
 }

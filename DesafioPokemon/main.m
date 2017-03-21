@@ -27,6 +27,11 @@ int main(int argc, const char * argv[]) {
                     break;
                 case 3:
                     [GameControl mostrarStatusJogador:jogador];
+                    break;
+                case 4:
+                    break;
+                default:
+                    printf("Insira uma opção válida\n");
             }
         }while(opcao != 4);
         return 0;
