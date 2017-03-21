@@ -169,10 +169,15 @@
 }
 
 +(void)escolherConquistarGinasios:(NSMutableArray*)itens comJogador:(Jogador*)currentJogador{
+    
     int opcao;
+    
     do{
+        
         [Visao menuGinasios:itens];
+        
         scanf("%d", &opcao);
+        
         switch (opcao) {
             case 1:
                 break;
@@ -212,9 +217,10 @@
         printf("mas você ganhou 10 de exp");
         
     }else if([pokemonInimigo level] - [jogador.pokemons[indicePokemon]level] == 0){
-        
+
+       
         if([[jogador.pokemons[indicePokemon] tipo] isEqualToString:@"Agua"] && [[pokemonInimigo tipo] isEqualToString:@"Fogo"]){
-            
+           
             [jogador.pokemons[indicePokemon]addExperiencia];
             printf("Parabéns você venceu a batalha!");
             printf("seu pokemon ganhou 35 de experiência");
@@ -225,7 +231,9 @@
             printf("Parabéns você venceu a batalha!");
             printf("seu pokemon ganhou 35 de experiência");
             
-        }else if([[jogador.pokemons[indicePokemon] tipo] isEqualToString:@"Vento"] && [[pokemonInimigo tipo] isEqualToString:@"Agua"]){
+
+        }else if( [[jogador.pokemons[indicePokemon] tipo] isEqualToString:@"Vento"] && [[pokemonInimigo tipo] isEqualToString:@"Agua"]){
+            
             [jogador.pokemons[indicePokemon]addExperiencia];
             printf("Parabéns você venceu a batalha!");
             printf("seu pokemon ganhou 35 de experiência");

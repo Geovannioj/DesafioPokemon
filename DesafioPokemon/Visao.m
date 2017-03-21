@@ -66,7 +66,7 @@
     printf("Nao foi dessa vez! Voce nao conseguiu capturar o pokemon\n");
 }
 
-+(void)menuLutar:(Jogador*)Jogador{
++(void)menuLutarJogador:(Jogador*)Jogador{
     printf("Escolha o pokemon para batalhar");
     printf("%@",Jogador.pokemons);
     printf("Digite o número do pokemon que você deseja lutar: ");
