@@ -20,5 +20,6 @@
 +(void)escolhaCacar:(NSMutableArray*)itens comJogador:(Jogador*)currentJogador;
 +(void)mostrarStatusJogador:(Jogador *)currentJogador;
 +(void)escolherConquistarGinasios:(NSMutableArray*)itens comJogador:(Jogador*)currentJogador;
++(void)conquistar:(NSMutableArray*)itens ginasio:(int)opcao comJogador:(Jogador*)currentJogador;
 
 @end

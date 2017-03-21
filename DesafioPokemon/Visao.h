@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Jogador.h"
 #import "Pokemon.h"
 #import "Ginasio.h"
+#import "Jogador.h"
 
 @interface Visao : NSObject
 

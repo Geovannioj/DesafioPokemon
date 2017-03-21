@@ -7,8 +7,6 @@
 //
 
 #import "Visao.h"
-#import "Jogador.h"
-#import "Pokemon.h"
 
 @implementation Visao
 
