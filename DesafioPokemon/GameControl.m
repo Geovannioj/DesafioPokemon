@@ -140,12 +140,17 @@
 
 +(void)escolhaCacar:(NSMutableArray*)itens comJogador:(Jogador *)currentJogador{
     int opcao;
+    int opcaoLutar;
     do{
         Pokemon *pokemonInimigo = itens[arc4random_uniform(30)];
         [Visao menuCacando:pokemonInimigo];
         scanf("%d", &opcao);
         switch(opcao){
             case 1:
+                scanf("%d",&opcaoLutar);
+                if(opcaoLutar == 1){
+                    [GameControl escolhaLutar:currentJogador contraPokemon:pokemonInimigo];
+                }
                 break;
             case 2:
                 if([currentJogador.pokemons count] >= 5){
