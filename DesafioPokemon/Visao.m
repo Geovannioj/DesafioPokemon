@@ -9,7 +9,6 @@
 #import "Visao.h"
 #import "Jogador.h"
 #import "Pokemon.h"
-#import "Campo.h"
 
 @implementation Visao
 
@@ -69,11 +68,37 @@
     printf("Nao foi dessa vez! Voce nao conseguiu capturar o pokemon\n");
 }
 
+<<<<<<< HEAD
 +(void)menuLutar:(Jogador*)Jogador{
     printf("Escolha o pokemon para batalhar");
     printf("%@",Jogador.pokemons);
     printf("Digite o número do pokemon que você deseja lutar: ");
     
+=======
++(void)menuStatus:(Jogador *)currentJogador{
+    int pokemonAtual;
+    printf("Nome: %s\n", [currentJogador.nome UTF8String]);
+    printf("Nº de pokémon: %lu\n", (unsigned long)[currentJogador.pokemons count]);
+    
+    for(pokemonAtual=0; pokemonAtual<[currentJogador.pokemons count]; pokemonAtual++){
+        printf("%d -> %s -",pokemonAtual+1, [[currentJogador.pokemons[pokemonAtual] nome] UTF8String]);
+        printf(" Tipo: %s -", [[currentJogador.pokemons[pokemonAtual] tipo] UTF8String]);
+        printf(" Nivel: %lu -",(unsigned long)[currentJogador.pokemons[pokemonAtual] level]);
+        printf(" Exp: %lu\n", (unsigned long)[currentJogador.pokemons[pokemonAtual] experiencia]);
+    }
+}
+
++(void)fugiu{
+    printf("Voce fugiu!\n");
+}
+
++(void)menuGinasios:(NSMutableArray*)itens{
+    printf("Digite 1 para Conquistar o Ginasio %s com o lider %s(Nivel 3)\n", [[itens[34] name] UTF8String], [[[itens[34] leader] nome] UTF8String]);
+    printf("Digite 2 para Conquistar o Ginasio %s com o lider %s(Nivel 6)\n", [[itens[35] name] UTF8String], [[[itens[35] leader] nome] UTF8String]);
+    printf("Digite 3 para Conquistar o Ginasio %s com o lider %s(Nivel 8)\n", [[itens[36] name] UTF8String], [[[itens[36] leader] nome] UTF8String]);
+    printf("Digite 4 para Conquistar o Ginasio %s com o lider %s(Nivel 10)\n", [[itens[37] name] UTF8String], [[[itens[37] leader] nome] UTF8String]);
+    printf("Digite 5 para voltar ao menu inicial\n");
+>>>>>>> fc6391585aea5aa68916c4cb086ebb2452f33ed4
 }
 
 @end

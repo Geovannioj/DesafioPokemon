@@ -38,6 +38,14 @@
     return nome;
 }
 
+-(NSString*)tipo{
+    return tipo;
+}
+
+-(NSInteger) experiencia{
+    return experiencia;
+}
+
 //construtor
 +(instancetype)criarPokemon:(NSString*)currentNomePokemon noLevel:(NSInteger)currentLevel comExperiencia:(NSInteger)currentExperiencia comTipo:(NSString*)currentTipo{
     

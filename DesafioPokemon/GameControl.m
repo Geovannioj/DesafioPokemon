@@ -81,6 +81,20 @@
     Ginasio *vermilion = [Ginasio criaGinasio:@"Vermilion" comLider:archie];
     Ginasio *celadon = [Ginasio criaGinasio:@"Celadon" comLider:giovanni];
     
+    //atribuindo pokemons aos lideres de ginasio
+    [jesse.pokemons addObject:torchic];
+    [jesse.pokemons addObject:psyduck];
+    [jesse.pokemons addObject:vileplume];
+    [james.pokemons addObject:growlithe];
+    [james.pokemons addObject:poliwhirl];
+    [james.pokemons addObject:victreebell];
+    [archie.pokemons addObject:ponyta];
+    [archie.pokemons addObject:shellder];
+    [archie.pokemons addObject:exeggutor];
+    [giovanni.pokemons addObject:chikorita];
+    [giovanni.pokemons addObject:kingler];
+    [giovanni.pokemons addObject:magmar];
+    
     //colocandos os itens no vetor
     [itens addObject:charmeleon];
     [itens addObject:charizard];
@@ -125,28 +139,56 @@
 }
 
 +(void)escolhaCacar:(NSMutableArray*)itens comJogador:(Jogador *)currentJogador{
-    Pokemon *pokemonInimigo = itens[arc4random_uniform(30)];
     int opcao;
-    [Visao menuCacando:pokemonInimigo];
-    scanf("%d", &opcao);
-    switch(opcao){
-        case 1:
-        case 2:
-            if([currentJogador.pokemons count] > 5){
-                [Visao excedeNumeroPokemons];
-            }
-            else{
-                if(arc4random_uniform(1) == 1){
-                    [currentJogador.pokemons addObject:pokemonInimigo];
-                    [Visao capturouPokemon];
+    do{
+        Pokemon *pokemonInimigo = itens[arc4random_uniform(30)];
+        [Visao menuCacando:pokemonInimigo];
+        scanf("%d", &opcao);
+        switch(opcao){
+            case 1:
+                break;
+            case 2:
+                if([currentJogador.pokemons count] >= 5){
+                    [Visao excedeNumeroPokemons];
                 }
                 else{
-                    [Visao naoCapturouPokemon];
+                    if(arc4random_uniform(2) == 1){
+                        [currentJogador.pokemons addObject:pokemonInimigo];
+                        [Visao capturouPokemon];
+                    }
+                    else{
+                        [Visao naoCapturouPokemon];
+                    }
                 }
-            }
-        case 3:
-            break;
-    }
+                break;
+            case 3:
+                [Visao fugiu];
+        }
+    }while(opcao != 4);
+    
+}
+
++(void)escolherConquistarGinasios:(NSMutableArray*)itens comJogador:(Jogador*)currentJogador{
+    int opcao;
+    do{
+        [Visao menuGinasios:itens];
+        scanf("%d", &opcao);
+        switch (opcao) {
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+        }
+    }while(opcao != 5);
+    
+}
+
++(void)mostrarStatusJogador:(Jogador *)currentJogador{
+    [Visao menuStatus:currentJogador];
     
 }
 +(void)escolhaLutar:(Jogador*)jogador:(Pokemon*) pokemonInimigo{
