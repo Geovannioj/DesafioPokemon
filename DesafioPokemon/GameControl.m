@@ -186,4 +186,21 @@
     
 }
 
++(void)conquistar:(NSMutableArray*)itens ginasio:(int)opcao comJogador:(Jogador*)currentJogador{
+    Ginasio *ginasio;
+    switch(opcao){
+        case 1:
+            ginasio = itens[34];
+            break;
+        case 2:
+            ginasio = itens[35];
+            break;
+        case 3:
+            ginasio = itens[36];
+            break;
+        default:
+            ginasio = itens[37];
+    }
+}
+
 @end
