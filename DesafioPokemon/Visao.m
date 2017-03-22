@@ -64,7 +64,7 @@
 }
 
 +(void)menuCacando:(Pokemon*)pokemonInimigo{
-    printf("Voce encontrou o pokemon %s! de level %ld\n", [pokemonInimigo.nome UTF8String], (long)pokemonInimigo.level);
+    printf("Voce encontrou o pokemon %s! de level %ld com o elemento %s\n", [pokemonInimigo.nome UTF8String], (long)pokemonInimigo.level, [pokemonInimigo.tipo UTF8String]);
     printf("Digite 1 para lutar\n");
     printf("Digite 2 para capturar\n");
     printf("Digite 3 para fugir\n");
@@ -82,9 +82,11 @@
 }
 
 +(void)menuLutarJogador:(Jogador*)Jogador{
-    printf("Escolha o pokemon para batalhar");
-    printf("%@",Jogador.pokemons);
-    printf("Digite o número do pokemon que você deseja lutar: ");
+    printf("Escolha o pokemon para batalhar!\n");
+    int contador = 0;
+    for(Pokemon *pokemon in Jogador.pokemons){
+        printf("Digite %d para escolher o pokemon %s de nivel %lu com o elemento %s\n", contador+1, [pokemon.nome UTF8String], pokemon.level, [pokemon.tipo UTF8String]);
+    }
 }
 
 +(void)menuStatus:(Jogador *)currentJogador{
@@ -110,6 +112,22 @@
     printf("Digite 3 para Conquistar o Ginasio %s com o lider %s(Nivel 8)\n", [[itens[36] name] UTF8String], [[[itens[36] leader] nome] UTF8String]);
     printf("Digite 4 para Conquistar o Ginasio %s com o lider %s(Nivel 10)\n", [[itens[37] name] UTF8String], [[[itens[37] leader] nome] UTF8String]);
     printf("Digite 5 para voltar ao menu inicial\n");
+}
+
++(void)venceu{
+    printf("Parabéns você venceu a batalha!\n");
+    printf("Seu pokemon ganhou 35 de experiência\n");
+}
++(void)perdeu{
+    printf("Você perdeu!\n");
+    printf("Ahhhhh infelizmente não foi dessa vez! ");
+    printf("Mas você ganhou 10 de exp\n");
+}
+
++(void)limpaTela{
+    for(int contador = 0; contador < 20; contador++){
+        printf("\n");
+    }
 }
 
 @end

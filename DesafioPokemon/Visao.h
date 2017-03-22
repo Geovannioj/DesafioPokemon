@@ -23,5 +23,7 @@
 +(void)menuStatus:(Jogador *)currentJogador;
 +(void)fugiu;
 +(void)menuGinasios:(NSMutableArray*)itens;
-
++(void)limpaTela;
++(void)venceu;
++(void)perdeu;
 @end
