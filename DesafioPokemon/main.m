@@ -20,12 +20,18 @@ int main(int argc, const char * argv[]) {
             switch(opcao){
                 case 1:
                     [GameControl escolhaCacar:itens comJogador:jogador];
+                    
                     break;
                 case 2:
                     [GameControl escolherConquistarGinasios:itens comJogador:jogador];
                     break;
                 case 3:
                     [GameControl mostrarStatusJogador:jogador];
+                    break;
+                case 4:
+                    break;
+                default:
+                    printf("Insira uma opção válida\n");
             }
         }while(opcao != 4);
         return 0;
