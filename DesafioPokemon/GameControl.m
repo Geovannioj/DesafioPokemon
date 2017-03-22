@@ -89,19 +89,33 @@
     Ginasio *vermilion = [Ginasio criaGinasio:@"Vermilion" comLider:archie];
     Ginasio *celadon = [Ginasio criaGinasio:@"Celadon" comLider:giovanni];
     
+    //criando pokemons dos lideres de ginasio
+    Pokemon *chimchar = [Pokemon criarPokemon:@"Chimchar" noLevel:3 comExperiencia:0 comTipo:@"Fogo"];
+    Pokemon *piplup = [Pokemon criarPokemon:@"Piplup" noLevel:3 comExperiencia:0 comTipo:@"Agua"];
+    Pokemon *turtwig = [Pokemon criarPokemon:@"Turtwig" noLevel:3 comExperiencia:0 comTipo:@"Vento"];
+    Pokemon *pignite = [Pokemon criarPokemon:@"Pignite" noLevel:6 comExperiencia:0 comTipo:@"Fogo"];
+    Pokemon *dewott = [Pokemon criarPokemon:@"Dewott" noLevel:6 comExperiencia:0 comTipo:@"Agua"];
+    Pokemon *servine = [Pokemon criarPokemon:@"Servine" noLevel:6 comExperiencia:0 comTipo:@"Vento"];
+    Pokemon *delphox = [Pokemon criarPokemon:@"Delphox" noLevel:8 comExperiencia:0 comTipo:@"Fogo"];
+    Pokemon *greninja = [Pokemon criarPokemon:@"Greninja" noLevel:8 comExperiencia:0 comTipo:@"Agua"];
+    Pokemon *chesnaught = [Pokemon criarPokemon:@"Chesnaught" noLevel:8 comExperiencia:0 comTipo:@"Vento"];
+    Pokemon *groundon = [Pokemon criarPokemon:@"Groudon" noLevel:10 comExperiencia:0 comTipo:@"Fogo"];
+    Pokemon *kyogre = [Pokemon criarPokemon:@"Kyogre" noLevel:10 comExperiencia:0 comTipo:@"Agua"];
+    Pokemon *rayquaza = [Pokemon criarPokemon:@"Rayquaza" noLevel:10 comExperiencia:0 comTipo:@"Vento"];
+    
     //atribuindo pokemons aos lideres de ginasio
-    [jesse.pokemons addObject:torchic];
-    [jesse.pokemons addObject:psyduck];
-    [jesse.pokemons addObject:vileplume];
-    [james.pokemons addObject:growlithe];
-    [james.pokemons addObject:poliwhirl];
-    [james.pokemons addObject:victreebell];
-    [archie.pokemons addObject:ponyta];
-    [archie.pokemons addObject:shellder];
-    [archie.pokemons addObject:exeggutor];
-    [giovanni.pokemons addObject:chikorita];
-    [giovanni.pokemons addObject:kingler];
-    [giovanni.pokemons addObject:magmar];
+    [jesse.pokemons addObject:chimchar];
+    [jesse.pokemons addObject:piplup];
+    [jesse.pokemons addObject:turtwig];
+    [james.pokemons addObject:pignite];
+    [james.pokemons addObject:dewott];
+    [james.pokemons addObject:servine];
+    [archie.pokemons addObject:delphox];
+    [archie.pokemons addObject:greninja];
+    [archie.pokemons addObject:chesnaught];
+    [giovanni.pokemons addObject:groundon];
+    [giovanni.pokemons addObject:kyogre];
+    [giovanni.pokemons addObject:rayquaza];
     
     //colocandos os itens no vetor
     [itens addObject:charmeleon];
