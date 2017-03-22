@@ -14,7 +14,6 @@ int main(int argc, const char * argv[]) {
     @autoreleasepool {
         NSMutableArray *itens = [GameControl inicializaJogo];
         Jogador *jogador = [Visao criaJogadorInicial];
-
         int opcao;
         do{
             opcao = [GameControl escolhaMenu];
