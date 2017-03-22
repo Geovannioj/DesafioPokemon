@@ -10,6 +10,9 @@
 
 @implementation Pokemon
 
+const int experienciaVitoria = 35;
+const int experienciaDerrota = 10;
+
 //setters
 -(void)setTipo:(NSString*)currentTipo{
     tipo = currentTipo;
@@ -24,10 +27,10 @@
     nome = currentNome;
 }
 -(void)addExperiencia{
-    experiencia += 35;
+    experiencia += experienciaVitoria;
 }
 -(void)addExperienciaDerrota{
-    experiencia += 10;
+    experiencia += experienciaDerrota;
 }
 //geters
 -(NSInteger)level{
