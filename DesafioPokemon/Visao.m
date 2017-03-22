@@ -89,13 +89,14 @@
     int contador = 0;
     for(Pokemon *pokemon in Jogador.pokemons){
         printf("Digite %d para escolher o pokemon %s de nivel %lu com o elemento %s\n", contador+1, [pokemon.nome UTF8String], pokemon.level, [pokemon.tipo UTF8String]);
+        contador++;
     }
 }
 
 +(void)menuStatus:(Jogador *)currentJogador{
     int pokemonAtual;
     printf("Nome: %s\n", [currentJogador.nome UTF8String]);
-    printf("Nº de pokémon: %lu\n", (unsigned long)[currentJogador.pokemons count]);
+    printf("Nº de pokémons: %lu\n", (unsigned long)[currentJogador.pokemons count]);
     
     for(pokemonAtual=0; pokemonAtual<[currentJogador.pokemons count]; pokemonAtual++){
         printf("%d || %s ||",pokemonAtual+1, [[currentJogador.pokemons[pokemonAtual] nome] UTF8String]);
