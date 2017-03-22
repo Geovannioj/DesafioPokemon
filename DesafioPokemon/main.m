@@ -12,6 +12,9 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
+        
+        Ginasio *ginasio = [[Ginasio alloc]init];
+        [[[[ginasio leader] pokemons] objectAtIndex:0] nome];
         NSMutableArray *itens = [GameControl inicializaJogo];
         Jogador *jogador = [Visao criaJogadorInicial];
         int opcao;
