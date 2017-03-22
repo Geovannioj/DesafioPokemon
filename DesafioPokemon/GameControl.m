@@ -141,7 +141,7 @@
 +(void)escolhaCacar:(NSMutableArray*)itens comJogador:(Jogador *)currentJogador{
     int opcao;
     bool validado=NO;
-    
+    [Visao limpaTela];
     Pokemon *pokemonInimigo = itens[arc4random_uniform(30)];
     [Visao menuCacando:pokemonInimigo];
 
@@ -179,9 +179,8 @@
 }
 
 +(void)escolherConquistarGinasios:(NSMutableArray*)itens comJogador:(Jogador*)currentJogador{
-    
     int opcao;
-    
+    [Visao limpaTela];
     do{
         
         [Visao menuGinasios:itens];
@@ -203,6 +202,7 @@
 }
 
 +(void)mostrarStatusJogador:(Jogador *)currentJogador{
+    [Visao limpaTela];
     [Visao menuStatus:currentJogador];
     
 }

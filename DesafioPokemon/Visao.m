@@ -52,6 +52,7 @@
     
     Jogador *jogador = [Jogador criarJogador:nome comPokemon:pokemon];
 
+    [Visao limpaTela];
     
     return jogador;
 }
@@ -75,9 +76,11 @@
 }
 
 +(void)capturouPokemon{
+    [Visao limpaTela];
     printf("Parabéns! Voce conseguiu capturar o pokemon!\n");
 }
 +(void)naoCapturouPokemon{
+    [Visao limpaTela];
     printf("Nao foi dessa vez! Voce nao conseguiu capturar o pokemon\n");
 }
 
@@ -103,6 +106,7 @@
 }
 
 +(void)fugiu{
+    [Visao limpaTela];
     printf("Voce fugiu!\n");
 }
 
