@@ -24,8 +24,16 @@
 +(int)escolhaPokemonLutar:(Jogador *)jogador{
     [Visao menuLutarJogador:jogador];
     int opcao;
-    scanf("%i",&opcao);
-    return opcao;
+    bool validado=NO;
+    do{
+        scanf("%i",&opcao);
+        
+        if (opcao-1 < [jogador.pokemons count]&& opcao >0) {
+            validado=YES;
+        }else
+            printf("Escolha um pokémon disponível\n");
+    } while(!validado);
+    return opcao-1;
 }
 
 +(NSMutableArray*)inicializaJogo{
@@ -34,46 +42,46 @@
     NSMutableArray *itens = [[NSMutableArray alloc]init];
     
     //criando 10 pokemons de fogo
-    Pokemon *charmeleon = [Pokemon criarPokemon:@"Charmeleon" noLevel:1 comExperiencia:1 comTipo:@"Fogo"];
-    Pokemon *charizard = [Pokemon criarPokemon:@"Charizard" noLevel:2 comExperiencia:1 comTipo:@"Fogo"];
-    Pokemon *torchic = [Pokemon criarPokemon:@"Torchic" noLevel:3 comExperiencia:1 comTipo:@"Fogo"];
-    Pokemon *vulpix = [Pokemon criarPokemon:@"Vulpix" noLevel:4 comExperiencia:1 comTipo:@"Fogo"];
-    Pokemon *ninetales = [Pokemon criarPokemon:@"Ninetales" noLevel:5 comExperiencia:1 comTipo:@"Fogo"];
-    Pokemon *growlithe = [Pokemon criarPokemon:@"Growlithe" noLevel:6 comExperiencia:1 comTipo:@"Fogo"];
-    Pokemon *arcanine = [Pokemon criarPokemon:@"Arcanine" noLevel:7 comExperiencia:1 comTipo:@"Fogo"];
-    Pokemon *ponyta = [Pokemon criarPokemon:@"Ponyta" noLevel:8 comExperiencia:1 comTipo:@"Fogo"];
-    Pokemon *rapidash = [Pokemon criarPokemon:@"Rapidash" noLevel:9 comExperiencia:1 comTipo:@"Fogo"];
-    Pokemon *magmar = [Pokemon criarPokemon:@"Magmar" noLevel:10 comExperiencia:1 comTipo:@"Fogo"];
+    Pokemon *charmeleon = [Pokemon criarPokemon:@"Vulpix" noLevel:1 comExperiencia:0 comTipo:@"Fogo"];
+    Pokemon *charizard = [Pokemon criarPokemon:@"Growlithe" noLevel:1 comExperiencia:0 comTipo:@"Fogo"];
+    Pokemon *torchic = [Pokemon criarPokemon:@"Ponyta" noLevel:2 comExperiencia:0 comTipo:@"Fogo"];
+    Pokemon *vulpix = [Pokemon criarPokemon:@"Slugma" noLevel:2 comExperiencia:0 comTipo:@"Fogo"];
+    Pokemon *ninetales = [Pokemon criarPokemon:@"Flareon" noLevel:3 comExperiencia:0 comTipo:@"Fogo"];
+    Pokemon *growlithe = [Pokemon criarPokemon:@"Houndour" noLevel:3 comExperiencia:0 comTipo:@"Fogo"];
+    Pokemon *arcanine = [Pokemon criarPokemon:@"Magmar" noLevel:4 comExperiencia:0 comTipo:@"Fogo"];
+    Pokemon *ponyta = [Pokemon criarPokemon:@"Numel" noLevel:4 comExperiencia:0 comTipo:@"Fogo"];
+    Pokemon *rapidash = [Pokemon criarPokemon:@"Torkoal" noLevel:5 comExperiencia:0 comTipo:@"Fogo"];
+    Pokemon *magmar = [Pokemon criarPokemon:@"Marowak" noLevel:6 comExperiencia:0 comTipo:@"Fogo"];
     
     //criando 10 pokemons de agua
-    Pokemon *wartortle = [Pokemon criarPokemon:@"Wartortle" noLevel:1 comExperiencia:1 comTipo:@"Agua"];
-    Pokemon *blastoise = [Pokemon criarPokemon:@"Blastoise" noLevel:2 comExperiencia:1 comTipo:@"Agua"];
-    Pokemon *psyduck = [Pokemon criarPokemon:@"Psyduck" noLevel:3 comExperiencia:1 comTipo:@"Agua"];
-    Pokemon *golduck = [Pokemon criarPokemon:@"Golduck" noLevel:4 comExperiencia:1 comTipo:@"Agua"];
-    Pokemon *poliwag = [Pokemon criarPokemon:@"Poliwag" noLevel:5 comExperiencia:1 comTipo:@"Agua"];
-    Pokemon *poliwhirl = [Pokemon criarPokemon:@"Poliwhirl" noLevel:6 comExperiencia:1 comTipo:@"Agua"];
-    Pokemon *seel = [Pokemon criarPokemon:@"Seel" noLevel:7 comExperiencia:1 comTipo:@"Agua"];
-    Pokemon *shellder = [Pokemon criarPokemon:@"Shellder" noLevel:8 comExperiencia:1 comTipo:@"Agua"];
-    Pokemon *krabby = [Pokemon criarPokemon:@"Krabby" noLevel:9 comExperiencia:1 comTipo:@"Agua"];
-    Pokemon *kingler = [Pokemon criarPokemon:@"Kingler" noLevel:10 comExperiencia:1 comTipo:@"Agua"];
+    Pokemon *wartortle = [Pokemon criarPokemon:@"Psyduck" noLevel:1 comExperiencia:0 comTipo:@"Agua"];
+    Pokemon *blastoise = [Pokemon criarPokemon:@"Magikarp" noLevel:1 comExperiencia:0 comTipo:@"Agua"];
+    Pokemon *psyduck = [Pokemon criarPokemon:@"Poliwag" noLevel:2 comExperiencia:0 comTipo:@"Agua"];
+    Pokemon *golduck = [Pokemon criarPokemon:@"Tentacool" noLevel:2 comExperiencia:0 comTipo:@"Agua"];
+    Pokemon *poliwag = [Pokemon criarPokemon:@"Slowpoke" noLevel:3 comExperiencia:0 comTipo:@"Agua"];
+    Pokemon *poliwhirl = [Pokemon criarPokemon:@"Krabby" noLevel:3 comExperiencia:0 comTipo:@"Agua"];
+    Pokemon *seel = [Pokemon criarPokemon:@"Shelder" noLevel:4 comExperiencia:0 comTipo:@"Agua"];
+    Pokemon *shellder = [Pokemon criarPokemon:@"Seel" noLevel:4 comExperiencia:0 comTipo:@"Agua"];
+    Pokemon *krabby = [Pokemon criarPokemon:@"Vaporeon" noLevel:5 comExperiencia:0 comTipo:@"Agua"];
+    Pokemon *kingler = [Pokemon criarPokemon:@"Lapras" noLevel:6 comExperiencia:0 comTipo:@"Agua"];
     
     //criando 10 pokemons de vento
-    Pokemon *oddish = [Pokemon criarPokemon:@"Oddish" noLevel:1 comExperiencia:1 comTipo:@"Vento"];
-    Pokemon *gloom = [Pokemon criarPokemon:@"Gloom" noLevel:2 comExperiencia:1 comTipo:@"Vento"];
-    Pokemon *vileplume = [Pokemon criarPokemon:@"Vileplume" noLevel:3 comExperiencia:1 comTipo:@"Vento"];
-    Pokemon *bellsprout = [Pokemon criarPokemon:@"Bellsprout" noLevel:4 comExperiencia:1 comTipo:@"Vento"];
-    Pokemon *weepinbell = [Pokemon criarPokemon:@"Weepinbell" noLevel:5 comExperiencia:1 comTipo:@"Vento"];
-    Pokemon *victreebell = [Pokemon criarPokemon:@"Victreebell" noLevel:6 comExperiencia:1 comTipo:@"Vento"];
-    Pokemon *exeggcute = [Pokemon criarPokemon:@"Exeggcute" noLevel:7 comExperiencia:1 comTipo:@"Vento"];
-    Pokemon *exeggutor = [Pokemon criarPokemon:@"Exeggutor" noLevel:8 comExperiencia:1 comTipo:@"Vento"];
-    Pokemon *tangela = [Pokemon criarPokemon:@"Tangela" noLevel:9 comExperiencia:1 comTipo:@"Vento"];
-    Pokemon *chikorita = [Pokemon criarPokemon:@"Chikorita" noLevel:10 comExperiencia:1 comTipo:@"Vento"];
+    Pokemon *oddish = [Pokemon criarPokemon:@"Oddish" noLevel:1 comExperiencia:0 comTipo:@"Vento"];
+    Pokemon *gloom = [Pokemon criarPokemon:@"Exeggcute" noLevel:1 comExperiencia:0 comTipo:@"Vento"];
+    Pokemon *vileplume = [Pokemon criarPokemon:@"Tangela" noLevel:2 comExperiencia:0 comTipo:@"Vento"];
+    Pokemon *bellsprout = [Pokemon criarPokemon:@"Bellsprout" noLevel:2 comExperiencia:0 comTipo:@"Vento"];
+    Pokemon *weepinbell = [Pokemon criarPokemon:@"Hoppip" noLevel:3 comExperiencia:0 comTipo:@"Vento"];
+    Pokemon *victreebell = [Pokemon criarPokemon:@"Sunkern" noLevel:3 comExperiencia:0 comTipo:@"Vento"];
+    Pokemon *exeggcute = [Pokemon criarPokemon:@"Seedot" noLevel:4 comExperiencia:0 comTipo:@"Vento"];
+    Pokemon *exeggutor = [Pokemon criarPokemon:@"Shroomish" noLevel:4 comExperiencia:0 comTipo:@"Vento"];
+    Pokemon *tangela = [Pokemon criarPokemon:@"Roselia" noLevel:5 comExperiencia:0 comTipo:@"Vento"];
+    Pokemon *chikorita = [Pokemon criarPokemon:@"Tropius" noLevel:6 comExperiencia:0 comTipo:@"Vento"];
     
     //Criando os jogadores inimigos
-    Jogador *giovanni = [Jogador criarJogador:@"Giovanni" comPokemon:chikorita ];
-    Jogador *jesse = [Jogador criarJogador:@"Jesse" comPokemon:torchic];
-    Jogador *james = [Jogador criarJogador:@"James"comPokemon:growlithe];
-    Jogador *archie = [Jogador criarJogador:@"Archie"comPokemon:ponyta];
+    Jogador *giovanni = [Jogador criarJogador:@"Giovanni"];
+    Jogador *jesse = [Jogador criarJogador:@"Jesse" ];
+    Jogador *james = [Jogador criarJogador:@"James"];
+    Jogador *archie = [Jogador criarJogador:@"Archie"];
     
     //criando os ginasios
     Ginasio *pewter = [Ginasio criaGinasio:@"Pewter" comLider:jesse];
@@ -81,21 +89,39 @@
     Ginasio *vermilion = [Ginasio criaGinasio:@"Vermilion" comLider:archie];
     Ginasio *celadon = [Ginasio criaGinasio:@"Celadon" comLider:giovanni];
     
+    //criando pokemons dos lideres de ginasio
+    Pokemon *chimchar = [Pokemon criarPokemon:@"Chimchar" noLevel:3 comExperiencia:0 comTipo:@"Fogo"];
+    Pokemon *piplup = [Pokemon criarPokemon:@"Piplup" noLevel:3 comExperiencia:0 comTipo:@"Agua"];
+    Pokemon *turtwig = [Pokemon criarPokemon:@"Turtwig" noLevel:3 comExperiencia:0 comTipo:@"Vento"];
+    Pokemon *pignite = [Pokemon criarPokemon:@"Pignite" noLevel:6 comExperiencia:0 comTipo:@"Fogo"];
+    Pokemon *dewott = [Pokemon criarPokemon:@"Dewott" noLevel:6 comExperiencia:0 comTipo:@"Agua"];
+    Pokemon *servine = [Pokemon criarPokemon:@"Servine" noLevel:6 comExperiencia:0 comTipo:@"Vento"];
+    Pokemon *delphox = [Pokemon criarPokemon:@"Delphox" noLevel:8 comExperiencia:0 comTipo:@"Fogo"];
+    Pokemon *greninja = [Pokemon criarPokemon:@"Greninja" noLevel:8 comExperiencia:0 comTipo:@"Agua"];
+    Pokemon *chesnaught = [Pokemon criarPokemon:@"Chesnaught" noLevel:8 comExperiencia:0 comTipo:@"Vento"];
+    Pokemon *groundon = [Pokemon criarPokemon:@"Groudon" noLevel:10 comExperiencia:0 comTipo:@"Fogo"];
+    Pokemon *kyogre = [Pokemon criarPokemon:@"Kyogre" noLevel:10 comExperiencia:0 comTipo:@"Agua"];
+    Pokemon *rayquaza = [Pokemon criarPokemon:@"Rayquaza" noLevel:10 comExperiencia:0 comTipo:@"Vento"];
+    
     //atribuindo pokemons aos lideres de ginasio
 
-    [jesse.pokemons addObject:psyduck];
-    [jesse.pokemons addObject:vileplume];
+
+    [jesse setPokemon:chimchar];
+    [jesse.pokemons addObject:piplup];
+    [jesse.pokemons addObject:turtwig];
     
-    [james.pokemons addObject:poliwhirl];
-    [james.pokemons addObject:victreebell];
+    [james setPokemon:pignite];
+    [james.pokemons addObject:dewott];
+    [james.pokemons addObject:servine];
     
+    [archie setPokemon:delphox];
+    [archie.pokemons addObject:greninja];
+    [archie.pokemons addObject:chesnaught];
     
-    [archie.pokemons addObject:shellder];
-    [archie.pokemons addObject:exeggutor];
-    
-    
-    [giovanni.pokemons addObject:kingler];
-    [giovanni.pokemons addObject:magmar];
+    [giovanni setPokemon:groundon];
+    [giovanni.pokemons addObject:kyogre];
+    [giovanni.pokemons addObject:rayquaza];
+
     
     //colocandos os itens no vetor
     [itens addObject:charmeleon];
@@ -226,50 +252,66 @@
     
 }
 +(void)escolhaLutar:(Jogador*)jogador contraPokemon:(Pokemon*) pokemonInimigo{
-    
     int indicePokemon = [GameControl escolhaPokemonLutar:jogador];
-    printf("O pokemon %s foi escolhido!",[[jogador.pokemons[indicePokemon] nome] UTF8String]);
+    [Visao limpaTela];
+    printf("O pokemon %s foi escolhido!\n",[[jogador.pokemons[indicePokemon] nome] UTF8String]);
     
     if((signed long)([jogador.pokemons[indicePokemon] level] - [pokemonInimigo level]) >= 3){
         
         [jogador.pokemons[indicePokemon]addExperiencia];
+        [GameControl evoluirPokemon:jogador.pokemons[indicePokemon]];
         [Visao venceu];
         
     }else if((signed long)([pokemonInimigo level] - [jogador.pokemons[indicePokemon]level]) >=3){
         
         [jogador.pokemons[indicePokemon]addExperienciaDerrota];
+        [GameControl evoluirPokemon:jogador.pokemons[indicePokemon]];
         [Visao perdeu];
     }else{
        
         if([[jogador.pokemons[indicePokemon] tipo] isEqualToString:@"Agua"] && [[pokemonInimigo tipo] isEqualToString:@"Fogo"]){
            
             [jogador.pokemons[indicePokemon]addExperiencia];
+            [GameControl evoluirPokemon:jogador.pokemons[indicePokemon]];
             [Visao venceu];
             
         }else if([[jogador.pokemons[indicePokemon] tipo] isEqualToString:@"Fogo"] && [[pokemonInimigo tipo] isEqualToString:@"Vento"]){
             
             [jogador.pokemons[indicePokemon]addExperiencia];
+            [GameControl evoluirPokemon:jogador.pokemons[indicePokemon]];
             [Visao venceu];
 
         }else if( [[jogador.pokemons[indicePokemon] tipo] isEqualToString:@"Vento"] && [[pokemonInimigo tipo] isEqualToString:@"Agua"]){
             
             [jogador.pokemons[indicePokemon]addExperiencia];
+            [GameControl evoluirPokemon:jogador.pokemons[indicePokemon]];
             [Visao venceu];
         }
         else if([[jogador.pokemons[indicePokemon] tipo] isEqual:pokemonInimigo.tipo]){
             if(arc4random_uniform(2) == 1){
                 [jogador.pokemons[indicePokemon]addExperiencia];
+                [GameControl evoluirPokemon:jogador.pokemons[indicePokemon]];
                 [Visao venceu];
             }
             else{
                 [jogador.pokemons[indicePokemon]addExperienciaDerrota];
+                [GameControl evoluirPokemon:jogador.pokemons[indicePokemon]];
                 [Visao perdeu];
             }
         }
         else{
             [jogador.pokemons[indicePokemon]addExperienciaDerrota];
+            [GameControl evoluirPokemon:jogador.pokemons[indicePokemon]];
             [Visao perdeu];
         }
+    }
+}
+
++(void)evoluirPokemon:(Pokemon*)pokemon{
+    if([pokemon experiencia] >= 100){
+        [pokemon setExperiencia:[pokemon experiencia]-100];
+        [pokemon setLevel:[pokemon level]+1];
+        [Visao pokemonEvoluiu:pokemon];
     }
 }
 

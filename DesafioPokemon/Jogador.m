@@ -15,7 +15,7 @@
     nome = currentNome;
 }
 -(void)setPokemon:(Pokemon*)newPokemon{
-    
+    pokemons =[[NSMutableArray alloc]init];
     [pokemons addObject:newPokemon];
 }
 
