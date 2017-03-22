@@ -89,6 +89,7 @@
     int contador = 0;
     for(Pokemon *pokemon in Jogador.pokemons){
         printf("Digite %d para escolher o pokemon %s de nivel %lu com o elemento %s\n", contador+1, [pokemon.nome UTF8String], pokemon.level, [pokemon.tipo UTF8String]);
+
         contador++;
     }
 }
@@ -133,6 +134,11 @@
     for(int contador = 0; contador < 20; contador++){
         printf("\n");
     }
+}
+
++(void)pokemonEvoluiu:(Pokemon*)pokemon{
+    printf("O seu pokemon: %s evoluiu!\n", [pokemon.nome UTF8String]);
+    printf("Agora ele está no level: %lu\n", pokemon.level);
 }
 
 @end

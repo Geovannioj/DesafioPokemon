@@ -22,5 +22,6 @@
 +(void)escolhaLutar:(Jogador*) jogador contraPokemon: (Pokemon*) pokemonInimigo;
 +(void)mostrarStatusJogador:(Jogador *)currentJogador;
 +(void)escolherConquistarGinasios:(NSMutableArray*)itens comJogador:(Jogador*)currentJogador;
++(void)evoluirPokemon:(Pokemon*)pokemon;
 
 @end
