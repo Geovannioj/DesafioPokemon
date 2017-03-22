@@ -26,4 +26,5 @@
 +(void)limpaTela;
 +(void)venceu;
 +(void)perdeu;
++(void)pokemonEvoluiu:(Pokemon*)pokemon;
 @end

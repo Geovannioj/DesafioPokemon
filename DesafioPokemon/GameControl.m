@@ -169,6 +169,7 @@
                 break;
             case 3:
                 [Visao fugiu];
+                [GameControl escolhaCacar:itens comJogador:currentJogador];
                 validado=YES;
                 break;
             default:
@@ -209,46 +210,54 @@
 +(void)escolhaLutar:(Jogador*)jogador contraPokemon:(Pokemon*) pokemonInimigo{
     
     int indicePokemon = [GameControl escolhaPokemonLutar:jogador];
-    printf("O pokemon %s foi escolhido!",[[jogador.pokemons[indicePokemon] nome] UTF8String]);
+    printf("O pokemon %s foi escolhido!\n",[[jogador.pokemons[indicePokemon] nome] UTF8String]);
     
     if((signed long)([jogador.pokemons[indicePokemon] level] - [pokemonInimigo level]) >= 3){
         
         [jogador.pokemons[indicePokemon]addExperiencia];
+        [GameControl evoluirPokemon:jogador.pokemons[indicePokemon]];
         [Visao venceu];
         
     }else if((signed long)([pokemonInimigo level] - [jogador.pokemons[indicePokemon]level]) >=3){
         
         [jogador.pokemons[indicePokemon]addExperienciaDerrota];
+        [GameControl evoluirPokemon:jogador.pokemons[indicePokemon]];
         [Visao perdeu];
     }else{
        
         if([[jogador.pokemons[indicePokemon] tipo] isEqualToString:@"Agua"] && [[pokemonInimigo tipo] isEqualToString:@"Fogo"]){
            
             [jogador.pokemons[indicePokemon]addExperiencia];
+            [GameControl evoluirPokemon:jogador.pokemons[indicePokemon]];
             [Visao venceu];
             
         }else if([[jogador.pokemons[indicePokemon] tipo] isEqualToString:@"Fogo"] && [[pokemonInimigo tipo] isEqualToString:@"Vento"]){
             
             [jogador.pokemons[indicePokemon]addExperiencia];
+            [GameControl evoluirPokemon:jogador.pokemons[indicePokemon]];
             [Visao venceu];
 
         }else if( [[jogador.pokemons[indicePokemon] tipo] isEqualToString:@"Vento"] && [[pokemonInimigo tipo] isEqualToString:@"Agua"]){
             
             [jogador.pokemons[indicePokemon]addExperiencia];
+            [GameControl evoluirPokemon:jogador.pokemons[indicePokemon]];
             [Visao venceu];
         }
         else if([[jogador.pokemons[indicePokemon] tipo] isEqual:pokemonInimigo.tipo]){
             if(arc4random_uniform(2) == 1){
                 [jogador.pokemons[indicePokemon]addExperiencia];
+                [GameControl evoluirPokemon:jogador.pokemons[indicePokemon]];
                 [Visao venceu];
             }
             else{
                 [jogador.pokemons[indicePokemon]addExperienciaDerrota];
+                [GameControl evoluirPokemon:jogador.pokemons[indicePokemon]];
                 [Visao perdeu];
             }
         }
         else{
             [jogador.pokemons[indicePokemon]addExperienciaDerrota];
+            [GameControl evoluirPokemon:jogador.pokemons[indicePokemon]];
             [Visao perdeu];
         }
     }
@@ -268,6 +277,14 @@
             break;
         default:
             ginasio = itens[37];
+    }
+}
+
++(void)evoluirPokemon:(Pokemon*)pokemon{
+    if([pokemon experiencia] >= 100){
+        [pokemon setExperiencia:[pokemon experiencia]-100];
+        [pokemon setLevel:[pokemon level]+1];
+        [Visao pokemonEvoluiu:pokemon];
     }
 }
 
