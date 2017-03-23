@@ -12,6 +12,7 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
+        
         NSMutableArray *itens = [GameControl inicializaJogo];
         Jogador *jogador = [Visao criaJogadorInicial];
         int opcao;
@@ -22,7 +23,12 @@ int main(int argc, const char * argv[]) {
                     [GameControl escolhaCacar:itens comJogador:jogador];
                     break;
                 case 2:
-                    [GameControl escolherConquistarGinasios:itens comJogador:jogador];
+                    if([[jogador pokemons] count] < 3){
+                        [Visao pokemonsInsuficientes];
+                    }
+                    else{
+                        [GameControl escolherConquistarGinasios:itens comJogador:jogador];
+                    }
                     break;
                 case 3:
                     [GameControl mostrarStatusJogador:jogador];

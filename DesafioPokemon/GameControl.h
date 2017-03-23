@@ -24,6 +24,6 @@
 +(void)escolherConquistarGinasios:(NSMutableArray*)itens comJogador:(Jogador*)currentJogador;
 +(void)evoluirPokemon:(Pokemon*)pokemon;
 +(void)batalhaGinasioJogador:(Jogador*) jogador inimigo:(Jogador *)inimigo ginasio:(Ginasio *) ginasio;
-
++(void)ordenarPokemonsJogador:(Jogador*)jogador;
 
 @end

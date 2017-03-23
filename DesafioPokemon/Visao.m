@@ -136,6 +136,12 @@
     }
 }
 
++(void)pokemonsInsuficientes{
+    [Visao limpaTela];
+    printf("Voce nao tem pokemons suficientes!\n");
+    printf("Voce precisa ter ao menos 3 pokemons para lutar em ginasios\n");
+}
+
 +(void)pokemonEvoluiu:(Pokemon*)pokemon{
     printf("O seu pokemon: %s evoluiu!\n", [pokemon.nome UTF8String]);
     printf("Agora ele está no level: %lu\n", pokemon.level);

@@ -41,7 +41,6 @@
 
 +(instancetype)criarJogador:(NSString *)currentNomeJogador{
     Jogador * jogador = [[Jogador alloc] init];
-    
     if(jogador){
         [jogador setNome:currentNomeJogador];
     }

@@ -27,4 +27,5 @@
 +(void)venceu;
 +(void)perdeu;
 +(void)pokemonEvoluiu:(Pokemon*)pokemon;
++(void)pokemonsInsuficientes;
 @end
