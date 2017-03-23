@@ -183,6 +183,21 @@
                 else{
                     if(arc4random_uniform(2) == 1){
                         [currentJogador.pokemons addObject:pokemonInimigo];
+                        //Ordenar pokemons por nivel decrescente
+                        [currentJogador.pokemons sortUsingComparator:^(id obj1, id obj2) {
+                            
+                            Pokemon* pokemon1 = (Pokemon*)obj1;
+                            Pokemon* pokemon2 = (Pokemon*)obj2;
+                            
+                            if (pokemon1.level<pokemon2.level) {
+                                return (NSComparisonResult)NSOrderedDescending;
+                            }
+                            
+                            if (pokemon1.level> pokemon2.level) {
+                                return (NSComparisonResult)NSOrderedAscending;
+                            }
+                            return (NSComparisonResult)NSOrderedSame;
+                        }];
                         [Visao capturouPokemon];
                     }
                     else{
@@ -312,6 +327,21 @@
             [GameControl evoluirPokemon:jogador.pokemons[indicePokemon]];
         }
     }
+    //Ordenar pokemons
+    [jogador.pokemons sortUsingComparator:^(id obj1, id obj2) {
+        
+        Pokemon* pokemon1 = (Pokemon*)obj1;
+        Pokemon* pokemon2 = (Pokemon*)obj2;
+        
+        if (pokemon1.level<pokemon2.level) {
+            return (NSComparisonResult)NSOrderedDescending;
+        }
+        
+        if (pokemon1.level> pokemon2.level) {
+            return (NSComparisonResult)NSOrderedAscending;
+        }
+        return (NSComparisonResult)NSOrderedSame;
+    }];
 }
 
 +(void)evoluirPokemon:(Pokemon*)pokemon{
@@ -322,5 +352,8 @@
     }
 }
 
++(void) ordenarPokemons {
+    
+}
 
 @end
