@@ -79,7 +79,7 @@
     
     //Criando os jogadores inimigos
     Jogador *giovanni = [Jogador criarJogador:@"Giovanni"];
-    Jogador *jesse = [Jogador criarJogador:@"Jesse"];
+    Jogador *jesse = [Jogador criarJogador:@"Jesse" ];
     Jogador *james = [Jogador criarJogador:@"James"];
     Jogador *archie = [Jogador criarJogador:@"Archie"];
     
@@ -104,6 +104,7 @@
     Pokemon *rayquaza = [Pokemon criarPokemon:@"Rayquaza" noLevel:10 comExperiencia:0 comTipo:@"Vento"];
     
     //atribuindo pokemons aos lideres de ginasio
+
     [jesse setPokemon:chimchar];
     [jesse.pokemons addObject:piplup];
     [jesse.pokemons addObject:turtwig];
@@ -116,6 +117,7 @@
     [giovanni setPokemon:groundon];
     [giovanni.pokemons addObject:kyogre];
     [giovanni.pokemons addObject:rayquaza];
+
     
     //colocandos os itens no vetor
     [itens addObject:charmeleon];
@@ -206,17 +208,38 @@
     do{
         
         [Visao menuGinasios:itens];
+        Ginasio *liderGinasio;
         
         scanf("%d", &opcao);
+        NSString *pokemonInimigo;
+        NSString *tipoPokemonInimigo;
+        NSInteger nivelPokemonInimigo;
         
         switch (opcao) {
             case 1:
+                liderGinasio = itens [34];
+                pokemonInimigo = [[[[liderGinasio leader]pokemons]objectAtIndex:0]nome];
+                nivelPokemonInimigo = [[[[liderGinasio leader]pokemons]objectAtIndex:0]level];
+                tipoPokemonInimigo = [[[[liderGinasio leader]pokemons]objectAtIndex:0]tipo];
+                printf("Pokemon inimigo é %s de nivel %lu com elemento %s\n",[pokemonInimigo UTF8String], nivelPokemonInimigo, [tipoPokemonInimigo UTF8String]);
+                [GameControl escolhaLutar:currentJogador contraPokemon: liderGinasio.leader.pokemons[0]];
                 break;
             case 2:
+                liderGinasio = itens [35];
+                pokemonInimigo = [[[[liderGinasio leader]pokemons]objectAtIndex:0]nome];
+                [GameControl escolhaLutar:currentJogador contraPokemon: liderGinasio.leader.pokemons[0]];
                 break;
             case 3:
+                liderGinasio = itens [36];
+                pokemonInimigo = [[[[liderGinasio leader]pokemons]objectAtIndex:0]nome];
+                [GameControl escolhaLutar:currentJogador contraPokemon: liderGinasio.leader.pokemons[0]];
+                
                 break;
             case 4:
+                liderGinasio = itens [37];
+                pokemonInimigo = [[[[liderGinasio leader]pokemons]objectAtIndex:0]nome];
+                [GameControl escolhaLutar:currentJogador contraPokemon: liderGinasio.leader.pokemons[0]];
+                
                 break;
         }
     }while(opcao != 5);
@@ -284,7 +307,6 @@
     }
 }
 
-
 +(void)evoluirPokemon:(Pokemon*)pokemon{
     if([pokemon experiencia] >= 100){
         [pokemon setExperiencia:[pokemon experiencia]-100];
@@ -292,5 +314,6 @@
         [Visao pokemonEvoluiu:pokemon];
     }
 }
+
 
 @end
