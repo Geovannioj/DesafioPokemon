@@ -104,16 +104,16 @@
     Pokemon *rayquaza = [Pokemon criarPokemon:@"Rayquaza" noLevel:10 comExperiencia:0 comTipo:@"Vento"];
     
     //atribuindo pokemons aos lideres de ginasio
-    [jesse.pokemons addObject:chimchar];
+    [jesse setPokemon:chimchar];
     [jesse.pokemons addObject:piplup];
     [jesse.pokemons addObject:turtwig];
-    [james.pokemons addObject:pignite];
+    [james setPokemon:pignite];
     [james.pokemons addObject:dewott];
     [james.pokemons addObject:servine];
-    [archie.pokemons addObject:delphox];
+    [archie setPokemon:delphox];
     [archie.pokemons addObject:greninja];
     [archie.pokemons addObject:chesnaught];
-    [giovanni.pokemons addObject:groundon];
+    [giovanni setPokemon:groundon];
     [giovanni.pokemons addObject:kyogre];
     [giovanni.pokemons addObject:rayquaza];
     
@@ -191,7 +191,6 @@
                 break;
             case 3:
                 [Visao fugiu];
-                [GameControl escolhaCacar:itens comJogador:currentJogador];
                 validado=YES;
                 break;
             default:
