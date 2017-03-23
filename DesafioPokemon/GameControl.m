@@ -217,30 +217,38 @@
         scanf("%d", &opcao);
         NSString *pokemonInimigo;
         
+        [Visao limpaTela];
         switch (opcao) {
             case 1:
                 liderGinasio = itens [34];
                 pokemonInimigo = [[[[liderGinasio leader]pokemons]objectAtIndex:0]nome];
-                printf("%s",[pokemonInimigo UTF8String]);
+                printf("%s\n",[pokemonInimigo UTF8String]);
                 [GameControl escolhaLutar:currentJogador contraPokemon: liderGinasio.leader.pokemons[0]];
                 break;
             case 2:
                 liderGinasio = itens [35];
                 pokemonInimigo = [[[[liderGinasio leader]pokemons]objectAtIndex:0]nome];
+                printf("%s\n",[pokemonInimigo UTF8String]);
                 [GameControl escolhaLutar:currentJogador contraPokemon: liderGinasio.leader.pokemons[0]];
                 break;
             case 3:
                 liderGinasio = itens [36];
                 pokemonInimigo = [[[[liderGinasio leader]pokemons]objectAtIndex:0]nome];
+                printf("%s\n",[pokemonInimigo UTF8String]);
                 [GameControl escolhaLutar:currentJogador contraPokemon: liderGinasio.leader.pokemons[0]];
                 
                 break;
             case 4:
                 liderGinasio = itens [37];
                 pokemonInimigo = [[[[liderGinasio leader]pokemons]objectAtIndex:0]nome];
+                printf("%s\n",[pokemonInimigo UTF8String]);
                 [GameControl escolhaLutar:currentJogador contraPokemon: liderGinasio.leader.pokemons[0]];
-                
                 break;
+            case 5:
+                //Retorna ao menu inicial
+                break;
+            default:
+                printf("\nEscolha um ginásio válido\n");
         }
     }while(opcao != 5);
     
@@ -258,51 +266,53 @@
     
     if((signed long)([jogador.pokemons[indicePokemon] level] - [pokemonInimigo level]) >= 3){
         
+        [Visao venceu];
         [jogador.pokemons[indicePokemon]addExperiencia];
         [GameControl evoluirPokemon:jogador.pokemons[indicePokemon]];
-        [Visao venceu];
         
     }else if((signed long)([pokemonInimigo level] - [jogador.pokemons[indicePokemon]level]) >=3){
         
+        [Visao perdeu];
         [jogador.pokemons[indicePokemon]addExperienciaDerrota];
         [GameControl evoluirPokemon:jogador.pokemons[indicePokemon]];
-        [Visao perdeu];
+        
     }else{
        
         if([[jogador.pokemons[indicePokemon] tipo] isEqualToString:@"Agua"] && [[pokemonInimigo tipo] isEqualToString:@"Fogo"]){
            
+            [Visao venceu];
             [jogador.pokemons[indicePokemon]addExperiencia];
             [GameControl evoluirPokemon:jogador.pokemons[indicePokemon]];
-            [Visao venceu];
             
         }else if([[jogador.pokemons[indicePokemon] tipo] isEqualToString:@"Fogo"] && [[pokemonInimigo tipo] isEqualToString:@"Vento"]){
             
+            [Visao venceu];
             [jogador.pokemons[indicePokemon]addExperiencia];
             [GameControl evoluirPokemon:jogador.pokemons[indicePokemon]];
-            [Visao venceu];
 
         }else if( [[jogador.pokemons[indicePokemon] tipo] isEqualToString:@"Vento"] && [[pokemonInimigo tipo] isEqualToString:@"Agua"]){
             
+            [Visao venceu];
             [jogador.pokemons[indicePokemon]addExperiencia];
             [GameControl evoluirPokemon:jogador.pokemons[indicePokemon]];
-            [Visao venceu];
+
         }
         else if([[jogador.pokemons[indicePokemon] tipo] isEqual:pokemonInimigo.tipo]){
             if(arc4random_uniform(2) == 1){
+                [Visao venceu];
                 [jogador.pokemons[indicePokemon]addExperiencia];
                 [GameControl evoluirPokemon:jogador.pokemons[indicePokemon]];
-                [Visao venceu];
             }
             else{
+                [Visao perdeu];
                 [jogador.pokemons[indicePokemon]addExperienciaDerrota];
                 [GameControl evoluirPokemon:jogador.pokemons[indicePokemon]];
-                [Visao perdeu];
             }
         }
         else{
+            [Visao perdeu];
             [jogador.pokemons[indicePokemon]addExperienciaDerrota];
             [GameControl evoluirPokemon:jogador.pokemons[indicePokemon]];
-            [Visao perdeu];
         }
     }
 }
