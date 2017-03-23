@@ -105,19 +105,15 @@
     
     //atribuindo pokemons aos lideres de ginasio
 
-
     [jesse setPokemon:chimchar];
     [jesse.pokemons addObject:piplup];
     [jesse.pokemons addObject:turtwig];
-    
     [james setPokemon:pignite];
     [james.pokemons addObject:dewott];
     [james.pokemons addObject:servine];
-    
     [archie setPokemon:delphox];
     [archie.pokemons addObject:greninja];
     [archie.pokemons addObject:chesnaught];
-    
     [giovanni setPokemon:groundon];
     [giovanni.pokemons addObject:kyogre];
     [giovanni.pokemons addObject:rayquaza];
@@ -216,32 +212,33 @@
         
         scanf("%d", &opcao);
         NSString *pokemonInimigo;
+        NSString *tipoPokemonInimigo;
+        NSInteger nivelPokemonInimigo;
         
         [Visao limpaTela];
         switch (opcao) {
             case 1:
                 liderGinasio = itens [34];
                 pokemonInimigo = [[[[liderGinasio leader]pokemons]objectAtIndex:0]nome];
-                printf("%s\n",[pokemonInimigo UTF8String]);
+                nivelPokemonInimigo = [[[[liderGinasio leader]pokemons]objectAtIndex:0]level];
+                tipoPokemonInimigo = [[[[liderGinasio leader]pokemons]objectAtIndex:0]tipo];
+                printf("Pokemon inimigo é %s de nivel %lu com elemento %s\n",[pokemonInimigo UTF8String], nivelPokemonInimigo, [tipoPokemonInimigo UTF8String]);
                 [GameControl escolhaLutar:currentJogador contraPokemon: liderGinasio.leader.pokemons[0]];
                 break;
             case 2:
                 liderGinasio = itens [35];
                 pokemonInimigo = [[[[liderGinasio leader]pokemons]objectAtIndex:0]nome];
-                printf("%s\n",[pokemonInimigo UTF8String]);
                 [GameControl escolhaLutar:currentJogador contraPokemon: liderGinasio.leader.pokemons[0]];
                 break;
             case 3:
                 liderGinasio = itens [36];
                 pokemonInimigo = [[[[liderGinasio leader]pokemons]objectAtIndex:0]nome];
-                printf("%s\n",[pokemonInimigo UTF8String]);
                 [GameControl escolhaLutar:currentJogador contraPokemon: liderGinasio.leader.pokemons[0]];
                 
                 break;
             case 4:
                 liderGinasio = itens [37];
                 pokemonInimigo = [[[[liderGinasio leader]pokemons]objectAtIndex:0]nome];
-                printf("%s\n",[pokemonInimigo UTF8String]);
                 [GameControl escolhaLutar:currentJogador contraPokemon: liderGinasio.leader.pokemons[0]];
                 break;
             case 5:
