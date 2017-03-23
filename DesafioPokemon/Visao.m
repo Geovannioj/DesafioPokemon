@@ -121,13 +121,13 @@
 }
 
 +(void)venceu{
-    printf("Parabéns você venceu a batalha!\n");
-    printf("Seu pokemon ganhou 35 de experiência\n");
+    printf("Parabéns você venceu a batalha!\n\n");
+    printf("Seu pokemon ganhou 35 de experiência\n\n");
 }
 +(void)perdeu{
-    printf("Você perdeu!\n");
-    printf("Ahhhhh infelizmente não foi dessa vez! ");
-    printf("Mas você ganhou 10 de exp\n");
+    printf("Você perdeu!\n\n");
+    printf("Ahhhhh infelizmente não foi dessa vez! \n");
+    printf("Mas você ganhou 10 de exp\n\n");
 }
 
 +(void)limpaTela{
