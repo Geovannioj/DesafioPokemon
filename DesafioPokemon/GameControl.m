@@ -283,8 +283,18 @@
     }
     
 }
++(BOOL)verificaliderGinasio:(Ginasio*)ginasio jogador:(Jogador*)jogador{
+    
+    if([[[ginasio leader]nome] isEqualToString: [jogador nome]]){
+        printf("Você já é o líder deste ginásio, escolha outro !");
+        return NO;
+    }else{
+        return YES;
+    }
+}
 +(void)escolherConquistarGinasios:(NSMutableArray*)itens comJogador:(Jogador*)currentJogador{
     int opcao;
+    BOOL verificaLiderGinasio;
     [Visao limpaTela];
     do{
         
@@ -299,24 +309,39 @@
         switch (opcao) {
             case 1:
                 liderGinasio = itens [34];
-                pokemonInimigo = [[[[liderGinasio leader]pokemons]objectAtIndex:0]nome];
-                [GameControl batalhaGinasioJogador:currentJogador inimigo:[liderGinasio leader] ginasio:liderGinasio];
+                verificaLiderGinasio = [GameControl verificaliderGinasio:liderGinasio jogador:currentJogador];
+                
+                if(verificaLiderGinasio){
+                    pokemonInimigo = [[[[liderGinasio leader]pokemons]objectAtIndex:0]nome];
+                    [GameControl batalhaGinasioJogador:currentJogador inimigo:[liderGinasio leader] ginasio:liderGinasio];
+                }
                 break;
         case 2:
                 liderGinasio = itens [35];
-                pokemonInimigo = [[[[liderGinasio leader]pokemons]objectAtIndex:0]nome];
-                [GameControl batalhaGinasioJogador:currentJogador inimigo:[liderGinasio leader] ginasio:liderGinasio];
+                verificaLiderGinasio = [GameControl verificaliderGinasio:liderGinasio jogador:currentJogador];
+                
+                if(verificaLiderGinasio){
+                    pokemonInimigo = [[[[liderGinasio leader]pokemons]objectAtIndex:0]nome];
+                    [GameControl batalhaGinasioJogador:currentJogador inimigo:[liderGinasio leader] ginasio:liderGinasio];
+                }
                 break;
             case 3:
                 liderGinasio = itens [36];
-                pokemonInimigo = [[[[liderGinasio leader]pokemons]objectAtIndex:0]nome];
-                [GameControl batalhaGinasioJogador:currentJogador inimigo:[liderGinasio leader] ginasio:liderGinasio];
+                verificaLiderGinasio = [GameControl verificaliderGinasio:liderGinasio jogador:currentJogador];
                 
+                if(verificaLiderGinasio){
+                    pokemonInimigo = [[[[liderGinasio leader]pokemons]objectAtIndex:0]nome];
+                    [GameControl batalhaGinasioJogador:currentJogador inimigo:[liderGinasio leader] ginasio:liderGinasio];
+                }
                 break;
             case 4:
                 liderGinasio = itens [37];
-                pokemonInimigo = [[[[liderGinasio leader]pokemons]objectAtIndex:0]nome];
-                [GameControl batalhaGinasioJogador:currentJogador inimigo:[liderGinasio leader] ginasio:liderGinasio];
+                verificaLiderGinasio = [GameControl verificaliderGinasio:liderGinasio jogador:currentJogador];
+                
+                if(verificaLiderGinasio){
+                    pokemonInimigo = [[[[liderGinasio leader]pokemons]objectAtIndex:0]nome];
+                    [GameControl batalhaGinasioJogador:currentJogador inimigo:[liderGinasio leader] ginasio:liderGinasio];
+                }
                 break;
             case 5:
                 //Retorna ao menu inicial
@@ -437,3 +462,7 @@
 }
 
 @end
+/*
+ FALTA: verificar se o líder de ginásio é o usuário que já o conquistou e ao entrar novamente o nome dele aparece como líder e não poderá lutar contra ele mesmo
+    //comentar coisas fundamentais
+*/

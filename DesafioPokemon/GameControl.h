@@ -25,5 +25,6 @@
 +(void)evoluirPokemon:(Pokemon*)pokemon;
 +(void)batalhaGinasioJogador:(Jogador*) jogador inimigo:(Jogador *)inimigo ginasio:(Ginasio *) ginasio;
 +(void)ordenarPokemonsJogador:(Jogador*)jogador;
++(BOOL)verificaliderGinasio:(Ginasio*)ginasio jogador:(Jogador*)jogador;
 
 @end
