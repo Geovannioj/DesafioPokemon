@@ -108,7 +108,7 @@
 }
 
 +(void)fugiu{
-    //[Visao limpaTela];
+    [Visao limpaTela];
     printf("Voce fugiu!\n");
 }
 

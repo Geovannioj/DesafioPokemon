@@ -216,37 +216,44 @@
     
     if(estatusBatalha){
         //usuário ganhou o primeiro round
+        printf("O pokemon adversário é o : %s\n",[pokemonInimigo UTF8String]);
         printf("Round 2!\n\n");
         estatusBatalha = [GameControl escolhaLutar:jogador contraPokemon:inimigo.pokemons[1]];
         
         if(estatusBatalha){
             //usuário ganhou o segundo round
+            printf("O pokemon adversário é o : %s\n",[pokemonInimigo UTF8String]);
             printf("Round 3!\n\n");
             estatusBatalha = [GameControl escolhaLutar:jogador contraPokemon:inimigo.pokemons[2]];
             if(estatusBatalha){
                 //o usuário ganhou os 3 rounds e vira o novo lider do ginásio
+                [Visao limpaTela];
                 printf("Parabéns! você virou o novo líder desse ginásio!\n");
                 [ginasio setLeader:jogador];
                 
             }else{
                 //o usuário ganhou o pimeiro o segundo e perdeu o terceiro
                 //o usuário vira líder de ginásio
+                [Visao limpaTela];
                 printf("Parabéns! você virou o novo líder desse ginásio!\n");
                 [ginasio setLeader:jogador];
             }
         }else{
             //usuário perdeu o segundo round
+            printf("O pokemon adversário é o : %s\n",[pokemonInimigo UTF8String]);
             printf("Round 3\n");
             estatusBatalha = [GameControl escolhaLutar:jogador contraPokemon:inimigo.pokemons[1]];
             
             if(estatusBatalha){
                 //usuário ganhou o primeiro round perdeu o segundo e ganhou o terceiro
                 //vira líder de ginásio
+                [Visao limpaTela];
                 printf("Parabéns! você virou o novo líder desse ginásio!\n");
                 [ginasio setLeader:jogador];
                 
             }else{
                 //o usuário perdeu o segundo e o terceiro round
+                [Visao limpaTela];
                 printf("Infelizmente não foi dessa vez, evolua seus pokemons e tente novamente!\n");
                 
             }
@@ -254,30 +261,36 @@
         }
     }else{
         //usuário perdeu o primeiro round
+        printf("O pokemon adversário é o : %s\n",[pokemonInimigo UTF8String]);
         printf("Round 2!\n\n");
         estatusBatalha = [GameControl escolhaLutar:jogador contraPokemon:inimigo.pokemons[0]];
         
         if(estatusBatalha){
             //perdeu o primeiro e ganhou o segundo
+            printf("O pokemon adversário é o : %s\n",[pokemonInimigo UTF8String]);
             printf("Round 3!\n\n");
             estatusBatalha = [GameControl escolhaLutar:jogador contraPokemon:inimigo.pokemons[1]];
             
             if(estatusBatalha){
                 //perdeu o primeiro, ganhou o segundo e o terceiro
                 //jogador vira líder do ginásio
+                [Visao limpaTela];
                 printf("Parabéns! você virou o novo líder desse ginásio!\n");
                 [ginasio setLeader:jogador];
             }
         }else{
             //jogador perdeu o primeiro e o segundo round
+            printf("O pokemon adversário é o : %s\n",[pokemonInimigo UTF8String]);
             printf("Round 3!\n\n");
             estatusBatalha = [GameControl escolhaLutar:jogador contraPokemon:inimigo.pokemons[0]];
             
             if(estatusBatalha){
                 //o usuário perdeu os dois pimeiros e ganhou o último
+                [Visao limpaTela];
                 printf(" Infelizmente não foi dessa vez que você virou líder do ginásio\n evolua seus pokemons, treine bastante e volte para tentar novamente!\n");
             }else
                 //o usuário perdeu os três rounds
+                [Visao limpaTela];
                 printf(" Infelizmente não foi dessa vez que você virou líder do ginásio\n evolua seus pokemons, treine bastante e volte para tentar novamente!\n");
         }
     }
@@ -286,7 +299,7 @@
 +(BOOL)verificaliderGinasio:(Ginasio*)ginasio jogador:(Jogador*)jogador{
     
     if([[[ginasio leader]nome] isEqualToString: [jogador nome]]){
-        printf("Você já é o líder deste ginásio, escolha outro !");
+        printf("Você já é o líder deste ginásio, escolha outro !\n");
         return NO;
     }else{
         return YES;
@@ -462,7 +475,3 @@
 }
 
 @end
-/*
- FALTA: verificar se o líder de ginásio é o usuário que já o conquistou e ao entrar novamente o nome dele aparece como líder e não poderá lutar contra ele mesmo
-    //comentar coisas fundamentais
-*/
